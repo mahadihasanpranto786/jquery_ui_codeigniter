@@ -9,7 +9,6 @@ $autoload['helper'] = array(
 	'hand',
 	'authority',
 	'cookie',
-	'heart',
 	'report',
 	'captcha',
 	'sql'

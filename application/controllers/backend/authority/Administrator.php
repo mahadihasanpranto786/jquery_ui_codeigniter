@@ -21,9 +21,7 @@ class Administrator extends CI_Controller
     public function index()
     {
         $data = $this->engine->store_nav('dashboard', 'Nothing', 'Welcome to dashboard');
-        $today = get_current_date();
-        $data['callPatient'] = $this->Global_model->multipleTableData('patient_basic_info', 'p_id', 'on_call_shedule_by_ptient_status', 'ocs_p_id', 'ocs_status', $today);
-        $data['getTodayPatient'] =  $this->M_patient->getTodayPatientList($today);
+
         $path = 'backend/administrator/dashboard';
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }

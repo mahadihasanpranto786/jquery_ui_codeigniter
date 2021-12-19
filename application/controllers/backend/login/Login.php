@@ -17,7 +17,7 @@ class Login extends CI_Controller
     public function index()
     {
         $company_info = array(
-            'tittle' => 'Welcome to <b>HeartCop</b><i class="fas fa-hand-point-right ml-4"></i>',
+            'tittle' => 'Welcome to <b>Codeigniter</b><i class="fas fa-hand-point-right ml-4"></i>',
         );
         $data['site_info'] = $company_info;
         $this->load->view('backend/login/login_view', $data);
@@ -32,15 +32,7 @@ class Login extends CI_Controller
         if ($confirm == 1) {
             $this->sessionStore($res);
             if ($res->user_type == 1) {
-                redirect('doctors', 'location');
-            } elseif ($res->user_type == 2) {
-                redirect('users', 'location');
-            } elseif ($res->user_type == 0) {
                 redirect('administrator', 'location');
-            }elseif ($res->user_type == 3) {
-                redirect('receptionist', 'location');
-            } elseif ($res->user_type == 4) {
-                redirect('junior_doctor', 'location');
             }
         } else {
             $this->session->set_flashdata('login_failed', 'Credential Not match');

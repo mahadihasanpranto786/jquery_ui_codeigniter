@@ -98,10 +98,7 @@
                                     <button type="submit" class="btn btn-md w-50 btn-info">Log in</button>
 
                                     <div class="mt-3 showRoleButton">
-                                        <button class="btn btn-info" onclick="auto_login.number.value = '01674514400';auto_login.password.value = '123456'; auto_sign_in()">Demo Access 1</button>
-                                        <button class="btn btn-info" onclick="auto_login.number.value = '01674514401';auto_login.password.value = '123456'; auto_sign_in()">Demo Access 2</button>
-                                        <button class="btn btn-info" onclick="auto_login.number.value = '01674514402';auto_login.password.value = '123456'; auto_sign_in()">Demo Access 3</button>
-                                        <button class="btn btn-info" onclick="auto_login.number.value = '01674514499';auto_login.password.value = '123456'; auto_sign_in()">Demo Access 4</button>
+                                        <button class="btn btn-info mt-1" onclick="auto_login.number.value = '01674514499';auto_login.password.value = '123456'; auto_sign_in()">Demo Access 1</button>
                                     </div>
 
                                 </div>
