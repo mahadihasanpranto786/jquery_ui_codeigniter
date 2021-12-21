@@ -361,16 +361,16 @@ if (StyleEdition == '1') {
 
 			$('.textarea').summernote()
 
-			//Datemask dd/mm/yyyy
-			$('#datemask').inputmask('dd/mm/yyyy', {
-				'placeholder': 'dd/mm/yyyy'
-			})
-			//Datemask2 mm/dd/yyyy
-			$('#datemask2').inputmask('mm/dd/yyyy', {
-				'placeholder': 'mm/dd/yyyy'
-			})
-			//Money Euro
-			$('[data-mask]').inputmask()
+			// //Datemask dd/mm/yyyy
+			// $('#datemask').inputmask('dd/mm/yyyy', {
+			// 	'placeholder': 'dd/mm/yyyy'
+			// })
+			// //Datemask2 mm/dd/yyyy
+			// $('#datemask2').inputmask('mm/dd/yyyy', {
+			// 	'placeholder': 'mm/dd/yyyy'
+			// })
+			// //Money Euro
+			// $('[data-mask]').inputmask()
 
 			//Date range picker
 			$('#reservationdate').datetimepicker({
@@ -405,25 +405,25 @@ if (StyleEdition == '1') {
 			)
 
 			//Timepicker
-			$('#timepicker').datetimepicker({
-				format: 'LT'
-			})
+			// $('#timepicker').datetimepicker({
+			// 	format: 'LT'
+			// })
 
 			//Bootstrap Duallistbox
-			$('.duallistbox').bootstrapDualListbox()
+			// $('.duallistbox').bootstrapDualListbox()
 
-			//Colorpicker
-			$('.my-colorpicker1').colorpicker()
-			//color picker with addon
-			$('.my-colorpicker2').colorpicker()
+			// //Colorpicker
+			// $('.my-colorpicker1').colorpicker()
+			// //color picker with addon
+			// $('.my-colorpicker2').colorpicker()
 
-			$('.my-colorpicker2').on('colorpickerChange', function(event) {
-				$('.my-colorpicker2 .fa-square').css('color', event.color.toString());
-			});
+			// $('.my-colorpicker2').on('colorpickerChange', function(event) {
+			// 	$('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+			// });
 
-			$("input[data-bootstrap-switch]").each(function() {
-				$(this).bootstrapSwitch('state', $(this).prop('checked'));
-			});
+			// $("input[data-bootstrap-switch]").each(function() {
+			// 	$(this).bootstrapSwitch('state', $(this).prop('checked'));
+			// });
 
 
 		})

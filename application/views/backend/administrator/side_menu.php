@@ -31,19 +31,19 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview <?= active_open('yearName', $main_nav); ?>">
-                    <a href="#" class="nav-link <?= active_nav('yearName', $main_nav); ?>">
+                <li class="nav-item has-treeview <?= active_open('sortable', $main_nav); ?>">
+                    <a href="#" class="nav-link <?= active_nav('sortable', $main_nav); ?>">
                         <i class="far fa-calendar-plus nav-icon"></i>
                         <p>
-                            Add Year Name
+                            Sortable
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php echo base_url('getYearData') ?>" class="nav-link <?= active_nav('yearName', $sub_nav); ?>">
+                            <a href="<?php echo base_url('viewSortable') ?>" class="nav-link <?= active_nav('sortable', $sub_nav); ?>">
                                 <i class="fas fa-user-plus"></i>
-                                <p>Create Year Name</p>
+                                <p>Create Sortable</p>
                             </a>
                         </li>
                     </ul>

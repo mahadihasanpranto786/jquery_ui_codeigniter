@@ -8,7 +8,7 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "database": "heart_fail",
+            "database": "jquery_ui_codeigniter",
             "username": "root",
             "name": "New Db",
             "password": ""

@@ -3,6 +3,10 @@
 class Common extends CI_Model
 {
 
+	function insertData($table, $data)
+	{
+		$this->db->insert($table, $data);
+	}
 	public function set_data($table, $data)
 	{
 		$this->db->trans_start();
@@ -18,6 +22,7 @@ class Common extends CI_Model
 	}
 	public function get_data($table)
 	{
+		$this->db->order_by("s_order");
 		$query = $this->db->get($table);
 		if ($this->db->affected_rows() > 0) {
 			return $query;
