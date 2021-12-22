@@ -46,6 +46,12 @@
                                 <p>Create Sortable</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('progressbarView') ?>" class="nav-link <?= active_nav('progressbar', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Create Progressbar</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

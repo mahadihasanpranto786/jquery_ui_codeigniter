@@ -4,9 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 $route['default_controller'] = 'welcome';
 
+$route['ajaxViewSortable'] = 'backend/jquery_ui/Sortable/ajaxViewSortable';
 $route['viewSortable'] = 'backend/jquery_ui/Sortable/viewSortable';
 $route['addSortable'] = 'backend/jquery_ui/Sortable/addSortable';
 $route['updateData'] = 'backend/jquery_ui/Sortable/updateData';
+$route['delete'] = 'backend/jquery_ui/Sortable/delete';
+$route['updateAllData'] = 'backend/jquery_ui/Sortable/updateAllData';
+
+$route['progressbarView'] = 'backend/jquery_ui/Progressbar/progressbarView';
 
 
 
