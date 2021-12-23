@@ -263,12 +263,12 @@
         $(function() {
             $("#sortable").sortable({
                 opacity: 0.5,
-
                 cursor: 'move',
                 tolerance: 'pointer',
                 revert: true,
                 items: 'li',
                 placeholder: 'state',
+                placeholder: "ui-state-highlight",
                 forcePlaceholderSize: true,
                 update: function(event, ui) {
 

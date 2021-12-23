@@ -28,11 +28,11 @@ class Progressbar extends CI_Controller
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }
     // Upload file/image method
-    public function upl()
+    public function upload_data()
     {
         $this->load->library('upload');
         $json = array();
-        $path = 'ROOT_UPL_IMAGE';
+        $path =  base_url('../../../../asset/uploads');
         // Define file rules
         $initialize = $this->upload->initialize(array(
             "upload_path" => $path,
@@ -48,7 +48,6 @@ class Progressbar extends CI_Controller
             $imagename = $data['file_name'];
             $json = 'success';
         }
-        header('Content-Type: application/json');
         echo json_encode($json);
     }
 }

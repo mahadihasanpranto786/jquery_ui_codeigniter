@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><?= $tittle ?></title>
+	<link rel="icon" type="image/png" href="<?php echo base_url('') ?>assets/uploads/image/logo/logo.png">
 	<!--	datatable start-->
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/plugins/fontawesome-free/css/all.min.css">
@@ -50,13 +51,14 @@
 	<link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/dist/css/adminlte.min.css">
-
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<!-- form wizard -->
 	<link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/css/form_wizard.css">
 
 	<!--custom css-->
 	<link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/css/custom.css">
 	<link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/css/morris.css">
+	<link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/dist/css/sweet.css">
 	<!-- SweetAlert2 -->
 	<link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 	<!-- Google Font: Source Sans Pro -->
@@ -325,7 +327,8 @@ if (StyleEdition == '1') {
 	<script src="<?php echo base_url('') ?>assets/backend/custom/select2.full.min.js"></script>
 	<!-- form wizard -->
 	<script src="<?php echo base_url('') ?>assets/backend/custom/main.js"></script>
-
+	<script src="<?php echo base_url('') ?>assets/backend/dist/js/sweet.js"></script>
+	<script src="<?php echo base_url('') ?>assets/backend/plugins/jquery-validation/jquery.validate.min.js"></script>
 
 	<script>
 		$(function() {
@@ -351,6 +354,10 @@ if (StyleEdition == '1') {
 	</script>
 	<script>
 		$(function() {
+
+			$(".datepicker").datepicker({
+				dateFormat: 'dd-mm-yy'
+			});
 			//Initialize Select2 Elements
 			$('.select2').select2()
 
@@ -361,7 +368,7 @@ if (StyleEdition == '1') {
 
 			$('.textarea').summernote()
 
-			// //Datemask dd/mm/yyyy
+			// // Datemask dd/mm/yyyy
 			// $('#datemask').inputmask('dd/mm/yyyy', {
 			// 	'placeholder': 'dd/mm/yyyy'
 			// })
@@ -369,7 +376,10 @@ if (StyleEdition == '1') {
 			// $('#datemask2').inputmask('mm/dd/yyyy', {
 			// 	'placeholder': 'mm/dd/yyyy'
 			// })
-			// //Money Euro
+
+
+
+			//Money Euro
 			// $('[data-mask]').inputmask()
 
 			//Date range picker
@@ -405,11 +415,11 @@ if (StyleEdition == '1') {
 			)
 
 			//Timepicker
-			// $('#timepicker').datetimepicker({
-			// 	format: 'LT'
-			// })
+			$('#timepicker').datetimepicker({
+				format: 'LT'
+			})
 
-			//Bootstrap Duallistbox
+			// Bootstrap Duallistbox
 			// $('.duallistbox').bootstrapDualListbox()
 
 			// //Colorpicker
@@ -421,9 +431,11 @@ if (StyleEdition == '1') {
 			// 	$('.my-colorpicker2 .fa-square').css('color', event.color.toString());
 			// });
 
-			// $("input[data-bootstrap-switch]").each(function() {
-			// 	$(this).bootstrapSwitch('state', $(this).prop('checked'));
-			// });
+			$("input[data-bootstrap-switch]").each(function() {
+				$(this).bootstrapSwitch('state', $(this).prop('checked'));
+			});
+
+
 
 
 		})

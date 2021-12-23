@@ -35,7 +35,7 @@
                     <a href="#" class="nav-link <?= active_nav('sortable', $main_nav); ?>">
                         <i class="far fa-calendar-plus nav-icon"></i>
                         <p>
-                            Sortable
+                            Jquery Ui
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -50,6 +50,12 @@
                             <a href="<?php echo base_url('progressbarView') ?>" class="nav-link <?= active_nav('progressbar', $sub_nav); ?>">
                                 <i class="fas fa-user-plus"></i>
                                 <p>Create Progressbar</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('datepickerShow') ?>" class="nav-link <?= active_nav('datepicker', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Datepicker Add</p>
                             </a>
                         </li>
                     </ul>

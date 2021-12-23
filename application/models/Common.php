@@ -30,6 +30,15 @@ class Common extends CI_Model
 			return FALSE;
 		}
 	}
+	public function getdata($table)
+	{
+		$query = $this->db->get($table);
+		if ($this->db->affected_rows() > 0) {
+			return $query;
+		} else {
+			return FALSE;
+		}
+	}
 	public function get_data_multi_conditional($table, $data)
 	{
 		$this->db->where($data);

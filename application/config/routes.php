@@ -12,6 +12,13 @@ $route['delete'] = 'backend/jquery_ui/Sortable/delete';
 $route['updateAllData'] = 'backend/jquery_ui/Sortable/updateAllData';
 
 $route['progressbarView'] = 'backend/jquery_ui/Progressbar/progressbarView';
+$route['upload_data'] = 'backend/jquery_ui/Progressbar/upload_data';
+
+
+$route['datepickerShow'] = 'backend/jquery_ui/Datepicker/datepickerShow';
+$route['datepickerAdd'] = 'backend/jquery_ui/Datepicker/datepickerAdd';
+$route['datepickerShowAjax'] = 'backend/jquery_ui/Datepicker/datepickerShowAjax';
+$route['deleteData'] = 'backend/jquery_ui/Datepicker/deleteData';
 
 
 
