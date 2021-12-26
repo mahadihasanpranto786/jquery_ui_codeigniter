@@ -356,7 +356,8 @@ if (StyleEdition == '1') {
 		$(function() {
 
 			$(".datepicker").datepicker({
-				dateFormat: 'dd-mm-yy'
+				/* dateFormat: 'dd-mm-yy', */
+				dateFormat: 'dd/mm/yy'
 			});
 			//Initialize Select2 Elements
 			$('.select2').select2()

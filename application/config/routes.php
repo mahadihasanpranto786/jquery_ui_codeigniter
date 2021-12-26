@@ -20,6 +20,12 @@ $route['datepickerAdd'] = 'backend/jquery_ui/Datepicker/datepickerAdd';
 $route['datepickerShowAjax'] = 'backend/jquery_ui/Datepicker/datepickerShowAjax';
 $route['deleteData'] = 'backend/jquery_ui/Datepicker/deleteData';
 
+$route['show'] = 'backend/jquery_ui/Show/show';
+$route['addShow'] = 'backend/jquery_ui/Show/addShow';
+$route['dataShowAjax'] = 'backend/jquery_ui/Show/dataShowAjax';
+$route['deleteDataShow'] = 'backend/jquery_ui/Show/deleteDataShow';
+$route['updateStatus'] = 'backend/jquery_ui/Show/updateStatus';
+
 
 
 $route['administrator'] = 'backend/authority/administrator/index';
