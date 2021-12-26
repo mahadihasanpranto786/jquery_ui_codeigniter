@@ -64,6 +64,12 @@
                                 <p>Show & Hide</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('autocompleteShow') ?>" class="nav-link <?= active_nav('autocompleteShow', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Autocomplete</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

@@ -26,6 +26,8 @@ $route['dataShowAjax'] = 'backend/jquery_ui/Show/dataShowAjax';
 $route['deleteDataShow'] = 'backend/jquery_ui/Show/deleteDataShow';
 $route['updateStatus'] = 'backend/jquery_ui/Show/updateStatus';
 
+$route['autocompleteShow'] = 'backend/jquery_ui/Autocomplete/autocompleteShow';
+
 
 
 $route['administrator'] = 'backend/authority/administrator/index';
