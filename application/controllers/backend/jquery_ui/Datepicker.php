@@ -22,7 +22,7 @@ class Datepicker extends CI_Controller
     public function datepickerShow()
     {
         $data = $this->engine->store_nav('sortable', 'datepicker', 'Datepicker');
-        $data['datepickerList'] = $this->Common->getdata('datepicker');
+        // $data['datepickerList'] = $this->Common->getdata('datepicker');
         $path = 'backend/jquery_ui/datepicker_view';
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }
@@ -39,7 +39,7 @@ class Datepicker extends CI_Controller
                     <td><?= $value->d_name ?></td>
                     <td><?= date("d-m-Y", strtotime($value->d_date)) ?></td>
                     <td>
-                        <button data-id='<?= $value->d_id ?>' id="" type='button' class='btn btn-sm bg-danger data_remove'>Delete</button>
+                        <button data-id='<?= $value->d_id ?>' type='button' class='btn btn-sm bg-danger data_remove'>Delete</button>
                     </td>
                 </tr>
 <?php  }
@@ -59,13 +59,11 @@ class Datepicker extends CI_Controller
         );
 
         $this->Common->insertData('datepicker', $data);
-        redirect('datepickerShow');
     }
     public function deleteData()
 
     {
         $data = $this->input->post('d_id');
         $this->Common->delete_data("datepicker", 'd_id', $data);
-        echo json_encode(['success' => true]);
     }
 }

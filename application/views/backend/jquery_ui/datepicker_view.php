@@ -73,11 +73,11 @@
         function showcard() {
             $.ajax({
                 url: "<?php echo base_url("datepickerShowAjax"); ?>",
-                type: "POST",
                 cache: false,
                 success: function(data) {
 
                     $('#dataShow').html(data);
+
                     $(".data_remove").click(function() {
                         var remove_id = $(this).data('id');
                         $.ajax({
@@ -95,7 +95,8 @@
 
         }
         $('#submitForm').click(function() {
-            if ($('#d_name').val() != "" && $('#d_date').val()) {
+
+            if ($('#d_name').val() != "" && $('#d_date').val() != "") {
                 $.ajax({
                     type: 'POST',
                     url: "<?= base_url('datepickerAdd'); ?>",
@@ -118,6 +119,8 @@
                 });
             }
         })
+
+        
 
 
     })

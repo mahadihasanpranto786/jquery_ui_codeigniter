@@ -194,11 +194,6 @@
                                     showConfirmButton: false,
                                     timer: 1000,
                                 });
-                                $('#s_name').val();
-                                $('#s_address').val("");
-                                $('#s_email').val("");
-                                $('#s_phone').val("");
-                                $('#s_order').val("");
                                 showcard()
                             }
                         });

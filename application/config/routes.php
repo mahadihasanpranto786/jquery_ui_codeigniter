@@ -28,6 +28,10 @@ $route['updateStatus'] = 'backend/jquery_ui/Show/updateStatus';
 
 $route['autocompleteShow'] = 'backend/jquery_ui/Autocomplete/autocompleteShow';
 
+$route['showDragdrop'] = 'backend/jquery_ui/Dragdrop/showDragdrop';
+$route['addDragdrop'] = 'backend/jquery_ui/Dragdrop/addDragdrop';
+$route['viewDrugAjax'] = 'backend/jquery_ui/Dragdrop/viewDrugAjax';
+
 
 
 $route['administrator'] = 'backend/authority/administrator/index';

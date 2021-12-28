@@ -1,3 +1,15 @@
+<style>
+    .ui-autocomplete {
+        max-height: 100px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+    }
+
+    * html .ui-autocomplete {
+        height: 100px;
+    }
+</style>
 <div class="content-wrapper p-4">
     <div class="content">
         <div class="row">

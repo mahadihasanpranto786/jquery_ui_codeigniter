@@ -68,7 +68,6 @@ class Sortable extends CI_Controller
         );
 
         $this->Common->insertData('sortable', $data);
-        redirect('viewSortable');
     }
 
     function updateData()
@@ -132,7 +131,5 @@ class Sortable extends CI_Controller
         );
 
         $this->Common->update_data('sortable', 's_id', $id,  $data);
-        redirect('viewSortable');
-        echo json_encode(['success' => true]);
     }
 }

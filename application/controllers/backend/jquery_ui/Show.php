@@ -44,7 +44,6 @@ class Show extends CI_Controller
         );
 
         $this->Common->insertData('show', $data);
-        redirect('show');
     }
 
     public function dataShowAjax()
@@ -80,7 +79,6 @@ class Show extends CI_Controller
     {
         $data = $this->input->post('s_id');
         $this->Common->delete_data("show", 's_id', $data);
-        echo json_encode(['success' => true]);
     }
 
     public function updateStatus()
@@ -98,6 +96,5 @@ class Show extends CI_Controller
             's_status' => $user_status,
         );
         $this->Common->update_data("show", "s_id", $id, $data);
-        redirect('show');
     }
 }

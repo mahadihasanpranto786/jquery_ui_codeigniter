@@ -30,6 +30,12 @@ class Common extends CI_Model
 			return FALSE;
 		}
 	}
+
+	public function insert($data = array())
+	{
+		$insert = $this->db->insert('dragdrop', $data);
+		return $insert ? true : false;
+	}
 	public function getdata($table)
 	{
 		$query = $this->db->get($table);

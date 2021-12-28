@@ -70,6 +70,12 @@
                                 <p>Autocomplete</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('showDragdrop') ?>" class="nav-link <?= active_nav('showDragdrop', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Drug And Drop</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
