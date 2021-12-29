@@ -71,9 +71,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo base_url('showDragdrop') ?>" class="nav-link <?= active_nav('showDragdrop', $sub_nav); ?>">
+                            <a href="<?php echo base_url('showDragdrop') ?>" class="nav-link <?= active_nav('dragdrop', $sub_nav); ?>">
                                 <i class="fas fa-user-plus"></i>
                                 <p>Drug And Drop</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('showResizable') ?>" class="nav-link <?= active_nav('showResizable', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Resizable</p>
                             </a>
                         </li>
                     </ul>

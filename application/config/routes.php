@@ -31,6 +31,10 @@ $route['autocompleteShow'] = 'backend/jquery_ui/Autocomplete/autocompleteShow';
 $route['showDragdrop'] = 'backend/jquery_ui/Dragdrop/showDragdrop';
 $route['addDragdrop'] = 'backend/jquery_ui/Dragdrop/addDragdrop';
 $route['viewDrugAjax'] = 'backend/jquery_ui/Dragdrop/viewDrugAjax';
+$route['showResizable'] = 'backend/jquery_ui/Resizable/showResizable';
+$route['addResizable'] = 'backend/jquery_ui/Resizable/addResizable';
+$route['viewSortable'] = 'backend/jquery_ui/Resizable/viewSortable';
+$route['updateResizable'] = 'backend/jquery_ui/Resizable/updateResizable';
 
 
 

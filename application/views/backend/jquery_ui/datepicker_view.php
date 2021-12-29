@@ -39,12 +39,8 @@
                         <button type="button" id="submitForm" class="btn btn-success">Submit</button>
                     </form>
                 </div>
-
             </div>
-
         </div>
-
-
     </div>
 </div>
 
@@ -120,7 +116,7 @@
             }
         })
 
-        
+
 
 
     })
