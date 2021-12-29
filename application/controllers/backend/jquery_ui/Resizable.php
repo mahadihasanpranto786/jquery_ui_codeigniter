@@ -30,6 +30,7 @@ class Resizable extends CI_Controller
     public function addResizable()
     {
         $r_name = $this->input->post('r_name');
+        $d_name = $this->input->post('d_name');
 
         $config = array(
             'file_name' => $_FILES['r_img_url']['name'],
@@ -67,8 +68,10 @@ class Resizable extends CI_Controller
             foreach ($resizableData->result() as $row) { ?>
                 <style>
                     #container {
-                        width: 300px;
-                        height: 300px;
+                        width: 250px;
+                        height: 200px;
+                        box-shadow: 0px 7px 46px 0px rgba(0, 0, 0, 0.75);
+
                     }
 
                     #container h3 {
@@ -90,9 +93,9 @@ class Resizable extends CI_Controller
                 </style>
                 <div class="col-md-3">
 
-                    <div id="container" class="card ui-widget-content">
+                    <div id="container" class="card ui-widget-content resizable" data-id="<?= $row->r_id ?>" style="width: <?php echo $row->r_height ?>; height: <?php echo $row->r_width ?>">
                         <img class="card-img-top ui-state-active" src="<?php echo base_url('assets/uploads/files/' . $row->r_img_url); ?>" style="width: <?php echo $row->r_height ?>; height: <?php echo $row->r_width ?>" alt="">
-                        <div class="card-body resizable" data-id="<?= $row->r_id ?>" style="width: <?php echo $row->r_height ?>; height: <?php echo $row->r_width ?>">
+                        <div class="card-body ">
                             <h5 class="card-title"><?= $row->r_name ?></h5>
                         </div>
                     </div>

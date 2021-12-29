@@ -82,6 +82,12 @@
                                 <p>Resizable</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('accordionShow') ?>" class="nav-link <?= active_nav('accordionShow', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Accordion</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

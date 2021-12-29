@@ -36,6 +36,10 @@ $route['addResizable'] = 'backend/jquery_ui/Resizable/addResizable';
 $route['viewSortable'] = 'backend/jquery_ui/Resizable/viewSortable';
 $route['updateResizable'] = 'backend/jquery_ui/Resizable/updateResizable';
 
+$route['accordionShow'] = 'backend/jquery_ui/Accordion/accordionShow';
+$route['addAccordion'] = 'backend/jquery_ui/Accordion/addAccordion';
+$route['ajaxAccordionShow'] = 'backend/jquery_ui/Accordion/ajaxAccordionShow';
+
 
 
 $route['administrator'] = 'backend/authority/administrator/index';
