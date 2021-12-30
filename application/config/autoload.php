@@ -20,4 +20,5 @@ $autoload['model'] = array(
 	'authentication/User',
 	'User',
 	'Common',
+	'authentication/M_jquery'
 );

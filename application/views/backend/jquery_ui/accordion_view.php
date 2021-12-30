@@ -11,6 +11,13 @@
         font-weight: 700 !important;
         color: #ffffff;
     }
+
+    .form_style {
+        border: 1px solid grey;
+        border-color: greenyellow;
+        box-shadow: 0px 1px 5px 5px grey;
+        border-radius: 5px;
+    }
 </style>
 <div class="content-wrapper">
     <div class="content">
@@ -22,7 +29,7 @@
             </div>
             <div class="col-md-6">
 
-                <form class="p-3" id="valueFrom" method="POST" autocomplete="off">
+                <form class="p-3 mt-2 form_style" id="valueFrom" method="POST" autocomplete="off">
                     <div class="widget">
                         <fieldset>
                             <legend class="bg-info card p-1">
@@ -42,12 +49,36 @@
                                 <input class="ui_radio" type="radio" value="London" name="country" id="radio_3">
                                 <label for="radio_3">London</label>
                             </div>
+                            <div class="mb-1 mt-0 controlgroup-vertical">
+                                <select name="car" id="a_car">
+                                    <option value="Compact car">Compact car</option>
+                                    <option value="Midsize car">Midsize car</option>
+                                    <option value="Full size car">Full size car</option>
+                                    <option value="SUV">SUV</option>
+                                    <option value="Luxury">Luxury</option>
+                                    <option value="Truck">Truck</option>
+                                    <option value="Van">Van</option>
+                                </select>
+                            </div>
+
                         </fieldset>
                         <fieldset>
                             <legend class="bg-info card p-1 ">
                                 <h6>Developing Ratings: </h6>
                             </legend>
-                            <label for="a_one_star">1 Star</label>
+
+                            <?php
+                            if ($star) {
+
+                                foreach ($star->result() as $key => $row) { ?>
+                                    <!-- 
+                                    <input type="hidden" name="s_id" id="s_id" value="<?php echo $row->s_id; ?>"> -->
+                                    <input class="ui_radio" type="checkbox" value="<?= $row->s_id ?>" name="rating_star[]" id="<?= $row->s_title ?>">
+                                    <label for="<?= $row->s_title ?>"><?= $row->s_title ?></label>
+
+                            <?php }
+                            } ?>
+                            <!--  <label for="a_one_star">1 Star</label>
                             <input class="ui_radio" type="checkbox" value="1" name="one_star" id="a_one_star">
                             <label for="a_two_star">2 Star</label>
                             <input class="ui_radio" type="checkbox" value="2" name="two_star" id="a_two_star">
@@ -56,7 +87,7 @@
                             <label for="a_four_star">4 Star</label>
                             <input class="ui_radio" type="checkbox" value="4" name="four_star" id="a_four_star">
                             <label for="a_five_star">5 Star</label>
-                            <input class="ui_radio" type="checkbox" value="5" name="five_star" id="a_five_star">
+                            <input class="ui_radio" type="checkbox" value="5" name="five_star" id="a_five_star"> -->
                         </fieldset>
                     </div>
                     <div class="form-group">
@@ -69,7 +100,8 @@
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Description</label>
-                        <input type="text" name="description" id="a_description" class="form-control" placeholder="Description input">
+                        <!-- <input type="text" name="description" id="a_description" class="form-control" placeholder="Description input"> -->
+                        <textarea name="description" class="form-control textarea" id="a_description"></textarea>
                     </div>
                     <div class="form-group widget">
                         <input type="hidden" name="a_id" id="a_id">
@@ -88,7 +120,7 @@
 
         $(".accordion").accordion();
         $(".ui_radio").checkboxradio();
-
+        $(".controlgroup-vertical").controlgroup({});
 
         function showData() {
             $.ajax({
@@ -100,19 +132,28 @@
         }
         $("#submitFrom").click(function() {
             // var formData = new FormData(document.getElementById("valueFrom"));
+
+            var dataArray = [];
+
+            $('input[name="rating_star[]"]:checked').each(function() {
+                if ($(this).val() !== '') {
+                    dataArray.push({
+                            data: $(this).val()
+                        }
+
+                    );
+                }
+            })
             $.ajax({
                 type: "POST",
                 url: "<?= base_url("addAccordion") ?>",
                 data: {
-                    country: $('input[name="country"]').val(),
-                    one_star: $('#a_one_star').val(),
-                    two_star: $('#a_two_star').val(),
-                    three_star: $('#a_three_star').val(),
-                    four_star: $('#a_four_star').val(),
-                    five_star: $('#a_five_star').val(),
+                    dataArray,
+                    country: $('input[name="country"]:checked').val(),
                     title: $('#a_title').val(),
                     paragraph: $('#a_paragraph ').val(),
                     description: $('#a_description ').val(),
+                    car: $('#a_car').val(),
                 },
 
                 success: function(data) {
@@ -125,14 +166,12 @@
                         timer: 1000,
                     });
                     $('input[name="country"]').prop('checked', false).checkboxradio('refresh')
-                    $('#a_one_star').prop('checked', false).checkboxradio('refresh')
-                    $('#a_two_star').prop('checked', false).checkboxradio('refresh')
-                    $('#a_three_star').prop('checked', false).checkboxradio('refresh')
-                    $('#a_four_star').prop('checked', false).checkboxradio('refresh')
-                    $('#a_five_star').prop('checked', false).checkboxradio('refresh')
+                    $('input[name="rating_star[]"]').prop('checked', false).checkboxradio('refresh')
                     $('#a_title').val("")
-                    $('#a_paragraph ').val("")
-                    $('#a_description ').val("")
+                    $('#a_paragraph').val("")
+
+
+                    // $("select[name='car']").prop('checked', false).selectmenu('refresh')
                     showData()
                 }
             })
