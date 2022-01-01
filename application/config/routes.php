@@ -33,12 +33,18 @@ $route['addDragdrop'] = 'backend/jquery_ui/Dragdrop/addDragdrop';
 $route['viewDrugAjax'] = 'backend/jquery_ui/Dragdrop/viewDrugAjax';
 $route['showResizable'] = 'backend/jquery_ui/Resizable/showResizable';
 $route['addResizable'] = 'backend/jquery_ui/Resizable/addResizable';
-$route['viewSortable'] = 'backend/jquery_ui/Resizable/viewSortable';
+$route['viewResizable'] = 'backend/jquery_ui/Resizable/viewResizable';
 $route['updateResizable'] = 'backend/jquery_ui/Resizable/updateResizable';
 
 $route['accordionShow'] = 'backend/jquery_ui/Accordion/accordionShow';
 $route['addAccordion'] = 'backend/jquery_ui/Accordion/addAccordion';
 $route['ajaxAccordionShow'] = 'backend/jquery_ui/Accordion/ajaxAccordionShow';
+
+$route['dialogShow'] = 'backend/jquery_ui/Dialog/dialogShow';
+$route['dialogAdd'] = 'backend/jquery_ui/Dialog/dialogAdd';
+$route['dialogAjaxView'] = 'backend/jquery_ui/Dialog/dialogAjaxView';
+$route['dialogUpdate'] = 'backend/jquery_ui/Dialog/dialogUpdate';
+$route['deleteDaTA'] = 'backend/jquery_ui/Dialog/deleteDaTA';
 
 
 

@@ -61,7 +61,7 @@ class Resizable extends CI_Controller
         }
     }
 
-    public function viewSortable()
+    public function viewResizable()
     {
         $resizableData = $this->Common->getdata('resizable');
         if ($resizableData) {

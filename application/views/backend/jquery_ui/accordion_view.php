@@ -169,9 +169,8 @@
                     $('input[name="rating_star[]"]').prop('checked', false).checkboxradio('refresh')
                     $('#a_title').val("")
                     $('#a_paragraph').val("")
+                    $('.note-editing-area').children('*').text('')
 
-
-                    // $("select[name='car']").prop('checked', false).selectmenu('refresh')
                     showData()
                 }
             })

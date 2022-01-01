@@ -76,7 +76,7 @@
 
         function showData() {
             $.ajax({
-                url: "<?php echo base_url('viewSortable') ?>",
+                url: "<?php echo base_url('viewResizable') ?>",
                 cache: false,
                 success: function(data) {
                     $("#dataView").html(data)

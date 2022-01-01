@@ -43,24 +43,6 @@
                         <h4 class=" ">Sortable Data List</h4>
                     </div>
                     <ul id="sortable" class="">
-
-                        <!-- <?php
-                                if ($sortableList) {
-                                    // x_debug($sortableList->result());
-                                    foreach ($sortableList->result() as $row) { ?>
-
-                                <li class="ui-state-default" style="padding-bottom: 120px;" data-id="<?php echo $row->s_id ?>">
-
-                                    <span class="ui-icon ui-icon-arrowthick-2-n-s">a</span>
-                                    <?php echo  $row->s_name ?>
-                                    <?php echo   $row->s_address ?>
-                                    <?php echo $row->s_email ?>
-                                    <?php echo   $row->s_phone ?></br>
-                                    <?php echo $row->s_order ?>
-
-                                </li>
-                        <?php  }
-                                } ?> -->
                     </ul>
                 </div>
             </div>
