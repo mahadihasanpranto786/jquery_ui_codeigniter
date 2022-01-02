@@ -63,43 +63,26 @@ class Resizable extends CI_Controller
 
     public function viewResizable()
     {
-        $resizableData = $this->Common->getdata('resizable');
+        $resizableData = $this->Common->getData('resizable');
         if ($resizableData) {
             foreach ($resizableData->result() as $row) { ?>
-                <style>
-                    #container {
-                        width: 250px;
-                        height: 200px;
-                        box-shadow: 0px 7px 46px 0px rgba(0, 0, 0, 0.75);
 
-                    }
+                <div class="col-md-4">
 
-                    #container h3 {
-                        text-align: center;
-                        margin: 0;
-                        margin-bottom: 10px;
-                    }
-
-                    .resizable {
-                        background-position: top left;
-                        width: 150px;
-                        height: 150px;
-                    }
-
-                    .resizable,
-                    #container {
-                        padding: 0.5em;
-                    }
-                </style>
-                <div class="col-md-3">
-
-                    <div id="container" class="card ui-widget-content resizable" data-id="<?= $row->r_id ?>" style="width: <?php echo $row->r_height ?>; height: <?php echo $row->r_width ?>">
+                    <div class="card ui-widget-content resizable" data-id="<?= $row->r_id ?>" style="width: <?php echo $row->r_height ?>; height: <?php echo $row->r_width ?>">
                         <img class="card-img-top ui-state-active" src="<?php echo base_url('assets/uploads/files/' . $row->r_img_url); ?>" style="width: <?php echo $row->r_height ?>; height: <?php echo $row->r_width ?>" alt="">
                         <div class="card-body ">
                             <h5 class="card-title"><?= $row->r_name ?></h5>
                         </div>
                     </div>
 
+
+                    <!--  <div class="card resizable" data-id="<?= $row->r_id ?>" style="width: <?php echo $row->r_height ?>; height: <?php echo $row->r_width ?>">
+                        <img class="card-img-top" src="<?php echo base_url('assets/uploads/files/' . $row->r_img_url); ?>" alt="">
+                        <div class="card-body ">
+                            <h5 class="card-title"><?= $row->r_name ?></h5>
+                        </div>
+                    </div> -->
 
                     <!-- <div id="container" class="ui-widget-content">
                         <h3 class="ui-widget-header">Containment</h3>

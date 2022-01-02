@@ -22,8 +22,8 @@ class Autocomplete extends CI_Controller
     public function autocompleteShow()
     {
         $data = $this->engine->store_nav('sortable', 'autocompleteShow', 'Autocomplete');
-        // $data['datepickerList'] = $this->Common->getdata('datepicker');
-        $data['datepickerList'] = $this->Common->getdata('autocomplete');
+        // $data['datepickerList'] = $this->Common->getData('datepicker');
+        $data['datepickerList'] = $this->Common->getData('autocomplete');
         $path = 'backend/jquery_ui/autocomplete_view';
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }

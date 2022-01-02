@@ -46,6 +46,15 @@ $route['dialogAjaxView'] = 'backend/jquery_ui/Dialog/dialogAjaxView';
 $route['dialogUpdate'] = 'backend/jquery_ui/Dialog/dialogUpdate';
 $route['deleteDaTA'] = 'backend/jquery_ui/Dialog/deleteDaTA';
 
+$route['menuShow'] = 'backend/jquery_ui/Menu/menuShow';
+$route['addSubMenu'] = 'backend/jquery_ui/Menu/addSubMenu';
+$route['addSubSubMenu'] = 'backend/jquery_ui/Menu/addSubSubMenu';
+$route['dependable_dropdown_menu'] = 'backend/jquery_ui/Menu/dependable_dropdown_menu';
+$route['menuDataView'] = 'backend/jquery_ui/Menu/menuDataView';
+$route['selectData'] = 'backend/jquery_ui/Menu/selectData';
+$route['addMenu'] = 'backend/jquery_ui/Menu/addMenu';
+$route['selectSubData'] = 'backend/jquery_ui/Menu/selectSubData';
+
 
 
 $route['administrator'] = 'backend/authority/administrator/index';

@@ -22,7 +22,7 @@ class Dialog extends CI_Controller
     public function dialogShow()
     {
         $data = $this->engine->store_nav('sortable', 'dialogShow', 'Dialog');
-        // $data['datepickerList'] = $this->Common->getdata('datepicker');
+        // $data['datepickerList'] = $this->Common->getData('datepicker');
         $path = 'backend/jquery_ui/dialog_view';
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }
@@ -47,7 +47,7 @@ class Dialog extends CI_Controller
 
     public function dialogAjaxView()
     {
-        $dialogList = $this->Common->getdata('dialog');
+        $dialogList = $this->Common->getData('dialog');
 
         $sl = 1;
         if ($dialogList) {

@@ -131,7 +131,7 @@
                             $("#d_id_dialog").val($(this).data('id'));
                             $("#d_name_dialog").val($(this).data('name'));
                             $("#d_address_dialog").val($(this).data('address'));
-                            $("#d_description_dialog").val($('.note-editing-area').children('*').html($(this).data('description')));
+                            $("#d_description_dialog").val($(this).data('description'));
                             //alert($(this).data('description'))
                         });
                     });

@@ -94,6 +94,12 @@
                                 <p>Dialog</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('menuShow') ?>" class="nav-link <?= active_nav('menuShow', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Menu</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

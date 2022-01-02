@@ -36,7 +36,7 @@ class Common extends CI_Model
 		$insert = $this->db->insert('dragdrop', $data);
 		return $insert ? true : false;
 	}
-	public function getdata($table)
+	public function getData($table)
 	{
 		$query = $this->db->get($table);
 		if ($this->db->affected_rows() > 0) {
@@ -112,5 +112,10 @@ class Common extends CI_Model
 	{
 		$query = $this->db->query($sql);
 		return $query;
+	}
+	function getDataMultiCondition($table, $data)
+	{
+		$this->db->where($data);
+		return $this->db->get($table);
 	}
 }

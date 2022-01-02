@@ -22,7 +22,7 @@ class Show extends CI_Controller
     public function show()
     {
         $data = $this->engine->store_nav('sortable', 'show', 'Show');
-        // $data['datepickerList'] = $this->Common->getdata('datepicker');
+        // $data['datepickerList'] = $this->Common->getData('datepicker');
         $path = 'backend/jquery_ui/show_view';
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }
@@ -48,7 +48,7 @@ class Show extends CI_Controller
 
     public function dataShowAjax()
     {
-        $showList = $this->Common->getdata('show');
+        $showList = $this->Common->getData('show');
 
         $sl = 1;
         if ($showList) {

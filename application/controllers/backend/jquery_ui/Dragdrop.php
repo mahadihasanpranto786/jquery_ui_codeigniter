@@ -22,7 +22,7 @@ class Dragdrop extends CI_Controller
     public function showDragdrop()
     {
         $data = $this->engine->store_nav('sortable', 'dragdrop', 'Dragdrop');
-        $data['getData'] = $this->Common->getdata('dragdrop');
+        $data['getData'] = $this->Common->getData('dragdrop');
         $path = 'backend/jquery_ui/drag_and_drop';
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }
@@ -50,7 +50,7 @@ class Dragdrop extends CI_Controller
 
     public function viewDrugAjax()
     {
-        $getData = $this->Common->getdata('dragdrop');
+        $getData = $this->Common->getData('dragdrop');
         if ($getData) {
             foreach ($getData->result() as $row) {
                 $filePath = 'assets/uploads/files/' . $row->d_file_name;
