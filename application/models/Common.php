@@ -118,4 +118,14 @@ class Common extends CI_Model
 		$this->db->where($data);
 		return $this->db->get($table);
 	}
+	public function getDataByOrder($table, $ID, $IdentifyOrder)
+	{
+		$this->db->order_by(("$ID"), $IdentifyOrder);
+		$query = $this->db->get($table);
+		if ($this->db->affected_rows() > 0) {
+			return $query;
+		} else {
+			return FALSE;
+		}
+	}
 }

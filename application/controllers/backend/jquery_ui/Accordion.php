@@ -22,7 +22,7 @@ class Accordion extends CI_Controller
     public function accordionShow()
     {
         $data = $this->engine->store_nav('sortable', 'accordionShow', 'Accordion');
-        $data['star'] = $this->Common->getData('star');
+        $data['star'] = $this->Common->getDataByOrder('star', "s_id", "DESC");
         $path = 'backend/jquery_ui/accordion_view';
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }
@@ -63,7 +63,7 @@ class Accordion extends CI_Controller
     public function ajaxAccordionShow()
     {
         // $dataAccordion = $this->M_jquery->table_join_multi_condition('rating_star', 'a_id', 'accordion', 'a_id', ['a_status' => 1]);;
-        $dataAccordion = $this->Common->getData('accordion');
+        $dataAccordion = $this->Common->getDataByOrder('accordion', "a_id", "DESC");
 
 
 

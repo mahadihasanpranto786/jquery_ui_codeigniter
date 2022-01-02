@@ -100,6 +100,12 @@
                                 <p>Menu</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('showSelectMenu') ?>" class="nav-link <?= active_nav('showSelectMenu', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Selectmenu</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
