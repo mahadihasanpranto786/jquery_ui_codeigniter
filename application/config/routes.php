@@ -56,6 +56,11 @@ $route['selectSubData'] = 'backend/jquery_ui/Menu/selectSubData';
 
 
 $route['showSelectMenu'] = 'backend/jquery_ui/Selectmenu/showSelectMenu';
+$route['getMenuDependable'] = 'backend/jquery_ui/Selectmenu/getMenuDependable';
+$route['getSubMenuDependable'] = 'backend/jquery_ui/Selectmenu/getSubMenuDependable';
+$route['addSelectMenu'] = 'backend/jquery_ui/Selectmenu/addSelectMenu';
+$route['showSelectMenuList'] = 'backend/jquery_ui/Selectmenu/showSelectMenuList';
+$route['deleteMenu'] = 'backend/jquery_ui/Selectmenu/deleteMenu';
 
 
 
