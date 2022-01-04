@@ -248,7 +248,7 @@
                 placeholder: "ui-state-highlight",
                 forcePlaceholderSize: true,
                 update: function(event, ui) {
-
+                    console.log(ui)
                     var dataArray = [];
 
                     $("#sortable li").each(function(index) {

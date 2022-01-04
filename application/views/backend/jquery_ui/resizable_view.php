@@ -83,7 +83,6 @@
 
                     $(".resizable").resizable({
                         resize: function(e, ui) {
-
                             var height = parseInt($('.resizable').css("height"))
                             var width = parseInt($('.resizable').css("width"))
 

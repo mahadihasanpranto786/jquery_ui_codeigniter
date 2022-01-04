@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Price</label>
-                            <input type="text" name="sr_price" id="sr_price" class="form-control" placeholder="Price input">
+                            <input type="number" name="sr_price" id="sr_price" class="form-control" placeholder="000000000$">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Image</label>

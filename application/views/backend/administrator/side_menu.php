@@ -112,6 +112,18 @@
                                 <p>Slider</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('viewSpinner') ?>" class="nav-link <?= active_nav('viewSpinner', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Spinner</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('viewTabs') ?>" class="nav-link <?= active_nav('viewTabs', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Tabs</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

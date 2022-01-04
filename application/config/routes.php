@@ -67,6 +67,13 @@ $route['addSlider'] = 'backend/jquery_ui/Slider/addSlider';
 $route['showSliderData'] = 'backend/jquery_ui/Slider/showSliderData';
 $route['slideRang'] = 'backend/jquery_ui/Slider/slideRang';
 
+$route['viewSpinner'] = 'backend/jquery_ui/Spinner/viewSpinner';
+
+$route['viewTabs'] = 'backend/jquery_ui/Tabs/viewTabs';
+$route['addTabs'] = 'backend/jquery_ui/Tabs/addTabs';
+$route['showTabs'] = 'backend/jquery_ui/Tabs/showTabs';
+$route['updateTabs'] = 'backend/jquery_ui/Tabs/updateTabs';
+
 
 
 $route['administrator'] = 'backend/authority/administrator/index';
