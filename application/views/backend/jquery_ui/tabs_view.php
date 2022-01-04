@@ -54,7 +54,9 @@
                 success: function(data) {
                     $("#dataListShow").html(data)
                     $(function() {
-                        var tabs = $(".tabs").tabs();
+                        var tabs = $(".tabs").tabs({
+                            event: "mouseover"
+                        });
                         var previouslyFocused = false;
 
                         tabs.find(".ui-tabs-nav").sortable({
@@ -80,6 +82,7 @@
                                     },
                                     success: function(resp) {
                                         //showData()
+                                        
                                     }
                                 })
 
