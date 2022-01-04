@@ -48,6 +48,8 @@ class Tabs extends CI_Controller
         $tabsListDataGet = $this->Common->getDataByOrder('tabs', 't_position', '')
 
 ?>
+
+        <h4 class="bg-lightblue p-1 text-center">You can sort the tabs section</h4>
         <div class="tabs">
             <ul>
                 <?php if ($tabsListDataGet) {
