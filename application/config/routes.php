@@ -62,6 +62,11 @@ $route['addSelectMenu'] = 'backend/jquery_ui/Selectmenu/addSelectMenu';
 $route['showSelectMenuList'] = 'backend/jquery_ui/Selectmenu/showSelectMenuList';
 $route['deleteMenu'] = 'backend/jquery_ui/Selectmenu/deleteMenu';
 
+$route['viewSlider'] = 'backend/jquery_ui/Slider/viewSlider';
+$route['addSlider'] = 'backend/jquery_ui/Slider/addSlider';
+$route['showSliderData'] = 'backend/jquery_ui/Slider/showSliderData';
+$route['slideRang'] = 'backend/jquery_ui/Slider/slideRang';
+
 
 
 $route['administrator'] = 'backend/authority/administrator/index';

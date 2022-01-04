@@ -106,6 +106,12 @@
                                 <p>Selectmenu</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('viewSlider') ?>" class="nav-link <?= active_nav('viewSlider', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Slider</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

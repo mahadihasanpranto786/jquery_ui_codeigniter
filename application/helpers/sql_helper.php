@@ -1,5 +1,11 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+function getMinMax($minPrice, $maxPrice)
+{
+	$sql = "SELECT * from slider_range where sr_price >= '$minPrice' and sr_price <= '$maxPrice'";
+	// $sql = "SELECT * from slider_range where sr_price BETWEEN $minPrice and $maxPrice";
+	return $sql;
+}
 function patientDemographics()
 {
 	$sql

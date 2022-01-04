@@ -122,7 +122,7 @@
                         }
                     })
                 },
-                width: 500
+                width: 300
             });
 
             $("#subMenu").selectmenu({
@@ -147,10 +147,10 @@
                         }
                     })
                 },
-                width: 500
+                width: 300
             });
             $(".subSubMenu3").selectmenu({
-                width: 500
+                width: 300
             })
         });
         $("#submitForm").click(function() {
