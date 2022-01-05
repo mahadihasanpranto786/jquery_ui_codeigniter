@@ -12,7 +12,8 @@ $route['delete'] = 'backend/jquery_ui/Sortable/delete';
 $route['updateAllData'] = 'backend/jquery_ui/Sortable/updateAllData';
 
 $route['progressbarView'] = 'backend/jquery_ui/Progressbar/progressbarView';
-$route['upload_data'] = 'backend/jquery_ui/Progressbar/upload_data';
+$route['uploadProgress'] = 'backend/jquery_ui/Progressbar/uploadProgress';
+$route['dataShowProgressbar'] = 'backend/jquery_ui/Progressbar/dataShowProgressbar';
 
 
 $route['datepickerShow'] = 'backend/jquery_ui/Datepicker/datepickerShow';
@@ -73,6 +74,10 @@ $route['viewTabs'] = 'backend/jquery_ui/Tabs/viewTabs';
 $route['addTabs'] = 'backend/jquery_ui/Tabs/addTabs';
 $route['showTabs'] = 'backend/jquery_ui/Tabs/showTabs';
 $route['updateTabs'] = 'backend/jquery_ui/Tabs/updateTabs';
+
+$route['viewPosition'] = 'backend/jquery_ui/Position/viewPosition';
+
+
 
 
 

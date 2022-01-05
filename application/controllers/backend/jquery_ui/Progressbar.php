@@ -16,7 +16,7 @@ class Progressbar extends CI_Controller
         $this->main_layout = 'backend/master_layout';
         $this->side_menu = 'backend/administrator/side_menu';
 
-        $this->loged_username = $this->session->userdata('currentActiveId');
+        $this->logged_username = $this->session->userdata('currentActiveId');
     }
 
     // index method
@@ -28,26 +28,70 @@ class Progressbar extends CI_Controller
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }
     // Upload file/image method
-    public function upload_data()
+    public function uploadProgress()
     {
-        $this->load->library('upload');
-        $json = array();
-        $path =  base_url('../../../../asset/uploads');
-        // Define file rules
-        $initialize = $this->upload->initialize(array(
-            "upload_path" => $path,
-            "allowed_types" => "gif|jpg|jpeg|png|bmp|pdf|doc|docx",
-            "remove_spaces" => TRUE
-        ));
-        if (!$this->upload->do_upload('upl_file')) {
-            $error = array('error' => $this->upload->display_errors());
-            echo $this->upload->display_errors();
-            $json = 'failed';
+        /*  $this->load->library('upload'); */
+        $p_name = $this->input->post('p_name');
+        $upload = 'err';
+        $config = array(
+            'file_name' => $_FILES['p_file']['name'],
+            'upload_path' => "assets/uploads/files/",
+            'allowed_types' => "gif|jpg|jpeg|png|bmp|pdf|doc|docx|sql|mp4",
+        );
+
+        $this->load->library('Upload', $config);
+        $this->upload->initialize($config);
+
+        if ($this->upload->do_upload('p_file')) {
+            $path = $this->upload->data();
+            $p_file = $path['file_name'];
+            $dataArray = array(
+                'p_file' => $p_file,
+                'p_name' => $p_name,
+                'p_created_at' => get_current_time(),
+                'p_created_by' => $this->logged_username,
+                'p_status' => 1,
+            );
+            $this->Common->insertData('progressbar', $dataArray);
+            $upload = 'ok';
         } else {
-            $data = $this->upload->data();
-            $imagename = $data['file_name'];
-            $json = 'success';
+            $dataArray = array(
+                'p_name' => $p_name,
+                'p_created_at' => get_current_time(),
+                'p_created_by' => $this->logged_username,
+                'p_status' => 1,
+            );
+            $this->Common->insertData('progressbar', $dataArray);
+            $upload = 'ok';
         }
-        echo json_encode($json);
+        echo $upload;
+    }
+    public function dataShowProgressbar()
+    {
+        $dataGet = $this->Common->getData('progressbar');
+        if ($dataGet) {
+            $sl = 1;
+            foreach ($dataGet->result() as $value) {
+                $filePath = 'assets/uploads/files/' . $value->p_file;
+                $fileMime = mime_content_type($filePath); ?>
+                <tr>
+                    <td><?= $sl++ ?></td>
+                    <td>
+                        <?php if ($value->p_name) { ?>
+                            <?= $value->p_name ?>
+                        <?php } else {
+                            echo "<p class='text-danger'>No Title</p>";
+                        } ?>
+                    </td>
+                    <td>
+                        <?php if ($value->p_file) { ?>
+                            <img class="img-rounded" src="<?php echo base_url('assets/uploads/files/' . $value->p_file); ?>" type="<?php echo $fileMime; ?>" width="60px" height="60px" />
+                        <?php } else {
+                            echo "<p class='text-danger'>No file</p>";
+                        } ?>
+                    </td>
+                </tr>
+<?php    }
+        }
     }
 }

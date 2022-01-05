@@ -43,13 +43,13 @@
                         <li class="nav-item">
                             <a href="<?php echo base_url('viewSortable') ?>" class="nav-link <?= active_nav('sortable', $sub_nav); ?>">
                                 <i class="fas fa-user-plus"></i>
-                                <p>Create Sortable</p>
+                                <p>Sortable</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?php echo base_url('progressbarView') ?>" class="nav-link <?= active_nav('progressbar', $sub_nav); ?>">
                                 <i class="fas fa-user-plus"></i>
-                                <p>Create Progressbar</p>
+                                <p>Progressbar</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -122,6 +122,12 @@
                             <a href="<?php echo base_url('viewTabs') ?>" class="nav-link <?= active_nav('viewTabs', $sub_nav); ?>">
                                 <i class="fas fa-user-plus"></i>
                                 <p>Tabs</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('viewPosition') ?>" class="nav-link <?= active_nav('viewPosition', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Position</p>
                             </a>
                         </li>
                     </ul>
