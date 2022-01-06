@@ -2,7 +2,7 @@
     <div class="content p-4">
         <div class="row">
             <div class="col-md-4">
-                <!-- <p>
+                <p>
                     <label for="spinner">Select a value:</label>
                     <input id="spinner" name="value">
                 </p>
@@ -13,7 +13,7 @@
                 <p>
                     <button class="ui-button ui-widget ui-corner-all" id="getvalue">Get value</button>
                     <button class="ui-button ui-widget ui-corner-all" id="setvalue">Set value to 5</button>
-                </p> -->
+                </p>
             </div>
             <div class="col-md-4">
                 <p>
@@ -42,32 +42,32 @@
 </div>
 <script src="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery.min.js"></script>
 <script>
-    // $(function() {
-    //     var spinner = $("#spinner").spinner();
+    $(function() {
+        var spinner = $("#spinner").spinner();
 
-    //     $("#disable").on("click", function() {
-    //         if (spinner.spinner("option", "disabled")) {
-    //             spinner.spinner("enable");
-    //         } else {
-    //             spinner.spinner("disable");
-    //         }
-    //     });
-    //     $("#destroy").on("click", function() {
-    //         if (spinner.spinner("instance")) {
-    //             spinner.spinner("destroy");
-    //         } else {
-    //             spinner.spinner();
-    //         }
-    //     });
-    //     $("#getvalue").on("click", function() {
-    //         alert(spinner.spinner("value"));
-    //     });
-    //     $("#setvalue").on("click", function() {
-    //         spinner.spinner("value", 5);
-    //     });
+        $("#disable").on("click", function() {
+            if (spinner.spinner("option", "disabled")) {
+                spinner.spinner("enable");
+            } else {
+                spinner.spinner("disable");
+            }
+        });
+        $("#destroy").on("click", function() {
+            if (spinner.spinner("instance")) {
+                spinner.spinner("destroy");
+            } else {
+                spinner.spinner();
+            }
+        });
+        $("#getvalue").on("click", function() {
+            alert(spinner.spinner("value"));
+        });
+        $("#setvalue").on("click", function() {
+            spinner.spinner("value", 5);
+        });
 
-    //     $("button").button();
-    // });
+        $("button").button();
+    });
     $(function() {
         $("#currency").on("change", function() {
 

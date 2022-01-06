@@ -32,6 +32,23 @@ class Sortable extends CI_Controller
         $sortableList = $this->Common->get_data('sortable');
         $i = 1;
         if ($sortableList) {
+            foreach ($sortableList->result() as $row) { ?>
+                <tr class="trList" data-id='<?= $row->s_id ?>'>
+                    <td><?= $row->s_order ?></td>
+                    <td><?= $row->s_name ?></td>
+                    <td><?= $row->s_email ?></td>
+                    <td><?= $row->s_phone ?></td>
+                    <td><?= $row->s_address ?></td>
+                    <td><button id="dataID" data-id='<?= $row->s_id ?>' data-name='<?= $row->s_name ?>' data-address='<?= $row->s_address ?>' data-email='<?= $row->s_email ?>' data-phone='<?= $row->s_phone ?>' type='button' data-toggle='modal' class='btn btn-sm bg-success list_edit'>Edit</button>&nbsp;<button data-id='<?= $row->s_id ?>' type='button' class='btn btn-sm bg-danger list_remove'>Delete</button></td>
+                </tr>
+<?php }
+        }
+    }
+    /* public function ajaxViewSortable()
+    {
+        $sortableList = $this->Common->get_data('sortable');
+        $i = 1;
+        if ($sortableList) {
             foreach ($sortableList->result() as $row) {
                 echo "<li class='ui-state-default' style='padding-bottom: 60px;' data-id='$row->s_id'><span class='ui-icon ui-icon-arrowthick-2-n-s'>a</span>" .
 
@@ -45,7 +62,7 @@ class Sortable extends CI_Controller
                 $i++;
             }
         }
-    }
+    } */
 
     public function addSortable()
     {

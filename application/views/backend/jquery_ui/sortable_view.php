@@ -42,9 +42,26 @@
                     <div class="card-header bg-info">
                         <h4 class=" ">Sortable Data List</h4>
                     </div>
-                    <ul id="sortable" class="">
-                    </ul>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">SL.</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sortable">
+
+                        </tbody>
+                    </table>
                 </div>
+
+
+                <!-- <ul id="sortable" class="">
+                    </ul> -->
             </div>
             <div class="col-md-4">
                 <div class="card">
@@ -243,15 +260,13 @@
                 cursor: 'move',
                 tolerance: 'pointer',
                 revert: true,
-                items: 'li',
+                items: 'tr',
                 placeholder: 'state',
                 placeholder: "ui-state-highlight",
                 forcePlaceholderSize: true,
                 update: function(event, ui) {
-                    console.log(ui)
                     var dataArray = [];
-
-                    $("#sortable li").each(function(index) {
+                    $("#sortable tr").each(function(index) {
                         dataArray.push({
                             id: $(this).attr("data-id"),
                             position: index + 1

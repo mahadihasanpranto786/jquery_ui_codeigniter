@@ -27,10 +27,6 @@
                             <input type="hidden" name="r_id" id="r_id">
                             <button type="button" id="submit_form" class="ui-button ui-widget ui-corner-all">Submit</button>
                         </div>
-                        <div class="form-group widget">
-                            <input type="hidden" name="d_id" id="d_id">
-                            <button type="button" id="submit_form" class="ui-button ui-widget ui-corner-all">Submit</button>
-                        </div>
                     </form>
                 </div>
             </div>
