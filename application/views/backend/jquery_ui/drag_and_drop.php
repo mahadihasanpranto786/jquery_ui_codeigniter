@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/plugins/dropzone/dropzone.min.css">
+<script src="<?php echo base_url('') ?>assets/backend/plugins/dropzone/dropzone.min.js"></script>
 <div class="content-wrapper p-4">
     <div class="row">
 
@@ -25,7 +26,7 @@
 
         </div>
         <div class="col-md-6">
-            <form action=" <?php echo base_url('addDragdrop'); ?>" class="dropzone" id="dropzoneFrom">
+            <form action="<?php echo base_url('addDragdrop'); ?>" class="dropzone" id="dropzoneFrom">
             </form>
         </div>
 
@@ -34,30 +35,15 @@
 
 
 <script src="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery.min.js"></script>
-<script src="<?php echo base_url('') ?>assets/backend/plugins/dropzone/dropzone.min.js"></script>
+
 
 <script>
     $(document).ready(function() {
         ShowData()
 
-        // Dropzone.options.dropzoneFrom = {
-        //     autoProcessQueue: false,
-        //     acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
-        //     init: function() {
-        //         var submitButton = document.querySelector('#submit-all');
-        //         myDropzone = this;
-        //         submitButton.addEventListener("click", function() {
-        //             myDropzone.processQueue();
-        //         });
-        //         this.on("complete", function() {
-        //             if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0) {
-        //                 var _this = this;
-        //                 _this.removeAllFiles();
-        //             }
-        //             ShowData();
-        //         });
-        //     },
-        // };
+
+
+
 
         function ShowData() {
             $.ajax({

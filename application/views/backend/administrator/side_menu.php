@@ -71,6 +71,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="<?php echo base_url('viewDroppable') ?>" class="nav-link <?= active_nav('viewDroppable', $sub_nav); ?>">
+                                <i class="fas fa-user-plus"></i>
+                                <p>Droppable</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?php echo base_url('showDragdrop') ?>" class="nav-link <?= active_nav('dragdrop', $sub_nav); ?>">
                                 <i class="fas fa-user-plus"></i>
                                 <p>Drug And Drop</p>

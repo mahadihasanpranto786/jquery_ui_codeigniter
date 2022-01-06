@@ -15,6 +15,7 @@ $route['progressbarView'] = 'backend/jquery_ui/Progressbar/progressbarView';
 $route['uploadProgress'] = 'backend/jquery_ui/Progressbar/uploadProgress';
 $route['dataShowProgressbar'] = 'backend/jquery_ui/Progressbar/dataShowProgressbar';
 
+$route['viewDroppable'] = 'backend/jquery_ui/Droppable/viewDroppable';
 
 $route['datepickerShow'] = 'backend/jquery_ui/Datepicker/datepickerShow';
 $route['datepickerAdd'] = 'backend/jquery_ui/Datepicker/datepickerAdd';
