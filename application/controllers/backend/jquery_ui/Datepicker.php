@@ -66,4 +66,18 @@ class Datepicker extends CI_Controller
         $data = $this->input->post('d_id');
         $this->Common->delete_data("datepicker", 'd_id', $data);
     }
+
+    public function alertDateInDatabase()
+    {
+        $d_date = $this->input->post('d_date');
+        $year = date('Y', strtotime($d_date));
+        $month = date('m', strtotime($d_date));
+        // $d_year = $this->input->post('d_year');
+        $data = $this->Common->getDataMultiCondition('datepicker', ['month(d_date)' => $month, 'year(d_date)' => $year])->result();
+        if ($data) {
+            echo 1;
+        } else {
+            echo 0;
+        }
+    }
 }

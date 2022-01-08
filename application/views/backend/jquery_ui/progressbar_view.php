@@ -64,7 +64,6 @@
                 xhr: function() {
                     var xhr = new window.XMLHttpRequest();
                     xhr.upload.addEventListener("progress", function(element) {
-                        console.log(element)
                         if (element.lengthComputable) {
                             var percentComplete = ((element.loaded / element.total) * 100);
                             $(".progress-bar").width(percentComplete + '%');
@@ -87,8 +86,10 @@
                     $('#uploadStatus').html('<p style="color:#EA4335;">File upload failed, please try again.</p>');
                 },
                 success: function(resp) {
+                    
                     console.log(resp)
                     if (resp == 'ok') {
+                        
                         showData()
                         $('#uploadForm')[0].reset();
                         $('#uploadStatus').html('<p style="color:#28A74B;">File has uploaded successfully!</p>');

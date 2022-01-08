@@ -21,6 +21,7 @@ $route['datepickerShow'] = 'backend/jquery_ui/Datepicker/datepickerShow';
 $route['datepickerAdd'] = 'backend/jquery_ui/Datepicker/datepickerAdd';
 $route['datepickerShowAjax'] = 'backend/jquery_ui/Datepicker/datepickerShowAjax';
 $route['deleteData'] = 'backend/jquery_ui/Datepicker/deleteData';
+$route['alertDateInDatabase'] = 'backend/jquery_ui/Datepicker/alertDateInDatabase';
 
 $route['show'] = 'backend/jquery_ui/Show/show';
 $route['addShow'] = 'backend/jquery_ui/Show/addShow';

@@ -115,9 +115,26 @@
                 });
             }
         })
+        $('#submitForm').click(function() {
+            var date = $('#d_date').val()
+            if (date) {
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo base_url("alertDateInDatabase") ?>",
+                    data: {
+                        d_date: date
+                    },
+                    success: function(alertDate) {
+                        if (alertDate == 1) {
+                            alert("This Month has already in database")
+                            $('#d_date').val("")
+                        }
 
+                    }
+                })
+            } else {
 
-
-
+            }
+        })
     })
 </script>
