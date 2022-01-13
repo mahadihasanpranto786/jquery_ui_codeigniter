@@ -87,6 +87,7 @@ class Selectmenu extends CI_Controller
                         <?= $value->s_menu_sub_sub_title ?>
                     </td>
                     <td class="table-teal">
+                        <button class="loginForm ml-1 ui-button ui-widget ui-corner-all bg-success" data-id="<?= $value->s_menu_id ?>" data-name="<?= $value->s_menu_title ?>" data-sub-name="<?= $value->s_menu_sub_title ?>" data-sub-sub-name="<?= $value->s_menu_sub_sub_title ?>">Edit</button>
                         <button type="button" data-id="<?= $value->s_menu_id ?>" class="bg-danger remove ui-button float-right ui-widget ui-corner-all" id="submitForm">Delete</button>
                     </td>
                 </tr>
