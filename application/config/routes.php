@@ -78,7 +78,7 @@ $route['showTabs'] = 'backend/jquery_ui/Tabs/showTabs';
 $route['updateTabs'] = 'backend/jquery_ui/Tabs/updateTabs';
 
 $route['viewPosition'] = 'backend/jquery_ui/Position/viewPosition';
-$route['showTest'] = 'backend/Test/showTest';
+$route['test'] = 'backend/Test/test';
 
 
 

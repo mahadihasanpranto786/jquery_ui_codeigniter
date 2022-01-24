@@ -44,8 +44,6 @@
 
                         <div id="uploadStatus"></div>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -86,10 +84,7 @@
                     $('#uploadStatus').html('<p style="color:#EA4335;">File upload failed, please try again.</p>');
                 },
                 success: function(resp) {
-                    
-                    console.log(resp)
                     if (resp == 'ok') {
-                        
                         showData()
                         $('#uploadForm')[0].reset();
                         $('#uploadStatus').html('<p style="color:#28A74B;">File has uploaded successfully!</p>');
@@ -106,7 +101,7 @@
             $.ajax({
                 url: "<?php echo base_url("dataShowProgressbar") ?>",
                 success: function(data) {
-                    $("#dataList").html(data)
+                    $("#dataList").html(data);
                 }
             })
         }

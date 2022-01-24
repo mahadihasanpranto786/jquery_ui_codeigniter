@@ -300,7 +300,7 @@
                                     },
                                     success: function(resp) {
                                         console.log(resp)
-                                        $('#subSubMenuv4').append("<option value=''>- Select Sub Sub-</option>");
+                                        $('#subSubMenuv4').append("<option value=''>-Select Sub Sub-</option>");
                                         $.each(resp, function(index, value) {
                                             $('#subSubMenuv4').append('<option id="thisSubSubName" data-name="' + value.ssm_title + '" value="' + value.ssm_id + '">' + value.ssm_title + '</option>');
                                         });
@@ -367,7 +367,7 @@
                             menu_id: ui.item.value
                         },
                         success: function(resp) {
-                            $('#subMenu').append("<option value=''>- Select Sub-</option>");
+                            $('#subMenu').append("<option value=''>-Select Sub-</option>");
                             $.each(resp, function(index, value) {
                                 $('#subMenu').append('<option id="thisSubName" data-name="' + value.sm_title + '" value="' + value.sm_id + '">' + value.sm_title + '</option>');
                             });
@@ -392,7 +392,7 @@
                         },
                         success: function(resp) {
 
-                            $('#subSubMenu').append("<option value=''>- Select Sub Sub-</option>");
+                            $('#subSubMenu').append("<option value=''>-Select Sub Sub-</option>");
                             $.each(resp, function(index, value) {
                                 $('#subSubMenu').append('<option id="thisSubSubName" data-name="' + value.ssm_title + '" value="' + value.ssm_id + '">' + value.ssm_title + '</option>');
                             });

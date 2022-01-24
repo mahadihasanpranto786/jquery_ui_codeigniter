@@ -19,7 +19,7 @@ class Test extends CI_Controller
         $this->logged_username = $this->session->userdata('currentActiveId');
     }
 
-    public function showTest()
+    public function test()
     {
         $data = $this->engine->store_nav('showTest', 'showTest', 'showTest');
         $path = 'backend/test';
