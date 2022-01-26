@@ -41,7 +41,101 @@
                 echo $name . "<br>" . $s_name;
             }
         }
+
+
+        function f($required, $optional = null, ...$variadicParams)
+        {
+            printf(
+                'Required: %s; Optional: %d; number of variadic parameters: %d' . "\n",
+                $required,
+                $optional,
+                count($variadicParams)
+            );
+        }
+        echo f(1) . "<br>";
+        echo f(1, 2) . "<br>";
+        echo f(1, 2, 3) . "<br>";
+        echo f(1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4) . "<br>";
+        // this produces a fatal error: Too few arguments
+
+
+        function foo()
+        {
+            echo 'Foo';
+        }
+        $var = 'foo';
+        $var(); // calls foo()
+        function getFullName(string $firstName, string $lastName): string
+        {
+            return 123;
+        }
+        $name = getFullName('Mary', 'Moon');
+        echo gettype($name);;
+
+
+
+        function A(bool $a)
+        {
+            var_dump($a);
+        }
+        echo A(0);
+        class GFG
+        {
+            function print()
+            {
+                echo 'Parent Class';
+            }
+
+            function bar()
+            {
+                $this->print();
+            }
+        }
+
+        class Child extends GFG
+        {
+            function print()
+            {
+                echo 'Child Class';
+            }
+        }
+
+        $parent = new Child();
+        $parent->bar();
+        echo  "<br>";
+
+
+
+        class foo
+        {
+            public $value = 42;
+
+            function &getValue()
+            {
+                return $this->value;
+            }
+        }
+
+        $obj = new foo;
+        $myValue = &$obj->getValue(); // $myValue is a reference to $obj->value, which is 42.
+        $obj->value = 2;
+        echo $myValue;
+        echo "<br>";
+
+        function foor()
+        {
+            $numargs = func_num_args();
+            echo "Number of arguments: $numargs\n";
+            if ($numargs > 3) {
+                echo "Second argument is: " . func_get_arg(3) . "\n";
+            }
+        }
+
+        foor(1, 2, 3,90);
         ?>
+
+
+
     </div>
 </div>
 
@@ -67,49 +161,10 @@
             }
         })
 
-        function changeValue(a) {
-            console.log('Value of a inside function before changing: ' + a);
-            a = 10;
-            console.log('Value of a inside function after changing: ' + a);
-            return a;
-        }
 
-        var a = 100;
-        console.log('Value of a before changing function is applied: ' + a);
-        changeValue(a);
-        console.log('Value of a after changing function is applied: ' + a);
-        // var arrayName = new Array('Rahim', 'Karim', 'Rafiq', 'Jabbar');
-        // var arrName = ['Rahim', 'Karim', 'Rafiq', 'Jabbar'];
-        /* for (var i = 0; i < arrName.length; i++) {
-            arrNameData.push()
-        } */
-        // console.log(arrName.splice(0,2,3));
-        // console.log(arrName);
+        console.log('Value: ' + x);
 
 
-        /*   for (var i = 0; i < 10; i++) {
-              if (i === 5) {
-                  console.log(i + ' is skipped');
-                  continue;
-              }
-              console.log('i is now at: ' + i);
-          } */
-
-        /*    var value = 10;
-           var value2 = 10;
-
-           switch (value2) {
-               case value == value2:
-                   document.write('the value and data type is equal');
-                   break;
-
-               case value == value2:
-                   document.write('the value is equal');
-                   break;
-
-               default:
-                   document.write('the value is equal na');
-           } */
 
     })
 </script>

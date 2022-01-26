@@ -92,6 +92,8 @@ class Progressbar extends CI_Controller
                     </td>
                 </tr>
 <?php    }
+        } else {
+            echo "<p class='p-3 text-center text-danger'>No Data Found</p>";
         }
     }
 }

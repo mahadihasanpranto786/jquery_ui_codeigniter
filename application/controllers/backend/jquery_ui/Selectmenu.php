@@ -94,6 +94,28 @@ class Selectmenu extends CI_Controller
 <?php }
         }
     }
+
+
+    public function updateSelectMenu()
+    {
+        //$max = $this->db->query('select max(`s_order`) as s_order from sortable')->row()->s_order;
+        $menu_id = $this->input->post("s_menu_id");
+        $menu_name = $this->input->post("menu_name");
+        $sub_name = $this->input->post("sub_name");
+        $sub_sub_menu = $this->input->post("sub_sub_menu");
+
+        $dataSelectMenu = array(
+            's_menu_title' => $menu_name,
+            's_menu_sub_title' => $sub_name,
+            's_menu_sub_sub_title' => $sub_sub_menu,
+            's_menu_updated_at' => get_current_time(),
+            's_menu_updated_by' => $this->logged_username,
+        );
+
+        $this->Common->update_data('selectmenu', 's_menu_id', $menu_id,  $dataSelectMenu);
+    }
+
+
     public function deleteMenu()
     {
 

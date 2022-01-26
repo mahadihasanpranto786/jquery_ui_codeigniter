@@ -63,7 +63,7 @@
                     var xhr = new window.XMLHttpRequest();
                     xhr.upload.addEventListener("progress", function(element) {
                         if (element.lengthComputable) {
-                            var percentComplete = ((element.loaded / element.total) * 100);
+                            var percentComplete = ((element.loaded / element.total) * 100).toFixed(2);
                             $(".progress-bar").width(percentComplete + '%');
                             $(".progress-bar").html(percentComplete + '%');
                         }
@@ -78,20 +78,88 @@
                 processData: false,
                 beforeSend: function() {
                     $(".progress-bar").width('0%');
-                    $('#uploadStatus').html('<img style="height: 50px; width:50px" src="assets/uploads/files/ben-redblock-loading.gif"/>');
+                    $('#uploadStatus').html(`<div class="spinner-grow text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-secondary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-success" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-danger" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-warning" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-info" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-light" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-dark" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-secondary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-success" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-danger" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-warning" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-info" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-light" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-dark" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-secondary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-success" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-grow text-danger" role="status">
+  <span class="sr-only">Loading...</span>
+</div>`);
                 },
                 error: function() {
                     $('#uploadStatus').html('<p style="color:#EA4335;">File upload failed, please try again.</p>');
                 },
                 success: function(resp) {
                     if (resp == 'ok') {
+                        setInterval(function() {
+                            $(".progress-bar").width('0%');
+                        }, 1000);
+
                         showData()
                         $('#uploadForm')[0].reset();
                         $('#uploadStatus').html('<p style="color:#28A74B;">File has uploaded successfully!</p>');
                     } else if (resp == 'err') {
                         showData()
+                        $(".progress-bar").width('0%');
                         $('#uploadStatus').html('<p style="color:#EA4335;">Please select a valid file to upload.</p>');
                     }
+                },
+                error: function(error) {
+                    $(".progress-bar").width('0%');
+                    $('#uploadStatus').html('');
                 }
             });
         });

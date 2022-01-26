@@ -90,7 +90,7 @@
                 </div>
 
                 <div id="dialog_1" title="Update Data List">
-                    <form>
+                    <form type="post" id="submitEditForm">
                         <fieldset>
                             <table class="table table-striped mb-0">
                                 <thead>
@@ -249,6 +249,32 @@
 
                             $("#subSubMenuv4").val($(this).data('sub-sub-name'));
                         });
+
+
+                        /* 
+                                                $('#submitEditForm').click(function() {
+
+                                                    $.ajax({
+                                                        type: 'POST',
+                                                        url: "<?= base_url('updateSelectMenu'); ?>",
+                                                        data: {
+                                                            s_menu_id: $("#s_menu_id2").val(),
+                                                            menu_name: $('#menu2').val(),
+                                                            sub_name: $('#subMenu2').val(),
+                                                            sub_sub_name: $('#subSubMenuv4').val(),
+                                                        },
+                                                        success: function(resp) {
+                                                            console.log(resp);
+                                                            showData()
+                                                            $('#dialog_1').dialog('hide');
+
+                                                        }
+                                                    });
+                                                }) */
+
+
+
+
 
                         /* function datastor(name, email) {
                             axios.post('url', {
