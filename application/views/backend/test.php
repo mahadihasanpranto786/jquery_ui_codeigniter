@@ -126,9 +126,9 @@
         {
             $numargs = func_num_args();
             echo "Number of arguments: $numargs\n";
-            if ($numargs > 3) {
+           
                 echo "Second argument is: " . func_get_arg(3) . "\n";
-            }
+            
         }
 
         foor(1, 2, 3,90);
