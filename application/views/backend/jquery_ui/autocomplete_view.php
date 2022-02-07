@@ -1,14 +1,14 @@
 <style>
-    .ui-autocomplete {
-        max-height: 100px;
-        overflow-y: auto;
-        /* prevent horizontal scrollbar */
-        overflow-x: hidden;
-    }
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
 
-    * html .ui-autocomplete {
-        height: 100px;
-    }
+* html .ui-autocomplete {
+    height: 100px;
+}
 </style>
 <div class="content-wrapper p-4">
     <div class="content">
@@ -33,14 +33,14 @@
 <script src="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery.min.js"></script>
 
 <script>
-    $(function() {
-        var availableTags = [
-            <?php foreach ($datepickerList->result() as $row) {
+$(function() {
+    var availableTags = [
+        <?php foreach ($datepickerList->result() as $row) {
                 echo '"' . $row->a_name . '",';
             } ?>
-        ];
-        $("#autocompleted").autocomplete({
-            source: availableTags
-        });
+    ];
+    $("#autocompleted").autocomplete({
+        source: availableTags
     });
+});
 </script>

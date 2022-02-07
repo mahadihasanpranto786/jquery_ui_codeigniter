@@ -47,94 +47,94 @@
 
 <script src="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery.min.js"></script>
 <script>
-    $(function() {
-        $.datepicker._gotoToday = function(id) {
-            $(id).datepicker('setDate', new Date()).datepicker('hide').blur();
-        };
-        $(".datepicker").datepicker({
-            showButtonPanel: true,
-            changeMonth: true,
-            changeYear: true,
-            inline: true,
-            showWeek: true,
-        });
-        $(".datepicker").datepicker("option", "showAnim", "fold");
-
+$(function() {
+    $.datepicker._gotoToday = function(id) {
+        $(id).datepicker('setDate', new Date()).datepicker('hide').blur();
+    };
+    $(".datepicker").datepicker({
+        showButtonPanel: true,
+        changeMonth: true,
+        changeYear: true,
+        inline: true,
+        showWeek: true,
     });
+    $(".datepicker").datepicker("option", "showAnim", "fold");
+
+});
 </script>
 <script>
-    $(document).ready(function() {
-        showcard()
-        //Show Data List
-        function showcard() {
-            $.ajax({
-                url: "<?php echo base_url("datepickerShowAjax"); ?>",
-                cache: false,
-                success: function(data) {
+$(document).ready(function() {
+    showcard()
+    //Show Data List
+    function showcard() {
+        $.ajax({
+            url: "<?php echo base_url("datepickerShowAjax"); ?>",
+            cache: false,
+            success: function(data) {
 
-                    $('#dataShow').html(data);
+                $('#dataShow').html(data);
 
-                    $(".data_remove").click(function() {
-                        var remove_id = $(this).data('id');
-                        $.ajax({
-                            type: 'POST',
-                            url: "<?php echo base_url('deleteData') ?>",
-                            data: 'd_id=' + remove_id,
-                            success: function(html) {
+                $(".data_remove").click(function() {
+                    var remove_id = $(this).data('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: "<?php echo base_url('deleteData') ?>",
+                        data: 'd_id=' + remove_id,
+                        success: function(html) {
 
-                                showcard();
-                            }
-                        });
+                            showcard();
+                        }
                     });
-                }
-            });
-
-        }
-        $('#submitForm').click(function() {
-
-            if ($('#d_name').val() != "" && $('#d_date').val() != "") {
-                $.ajax({
-                    type: 'POST',
-                    url: "<?= base_url('datepickerAdd'); ?>",
-                    data: {
-                        d_name: $('#d_name').val(),
-                        d_date: $('#d_date').val(),
-                    },
-                    success: function(resp) {
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Successfully added data',
-                            showConfirmButton: false,
-                            timer: 1000,
-                        });
-                        $('#d_name').val("");
-                        $('#d_date').val("");
-                        showcard()
-                    }
                 });
             }
-        })
-        $('#submitForm').click(function() {
-            var date = $('#d_date').val()
-            if (date) {
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo base_url("alertDateInDatabase") ?>",
-                    data: {
-                        d_date: date
-                    },
-                    success: function(alertDate) {
-                        if (alertDate == 1) {
-                            alert("This Month has already in database")
-                            $('#d_date').val("")
-                        }
+        });
 
-                    }
-                })
-            } else {
+    }
+    $('#submitForm').click(function() {
 
-            }
-        })
+        if ($('#d_name').val() != "" && $('#d_date').val() != "") {
+            $.ajax({
+                type: 'POST',
+                url: "<?= base_url('datepickerAdd'); ?>",
+                data: {
+                    d_name: $('#d_name').val(),
+                    d_date: $('#d_date').val(),
+                },
+                success: function(resp) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Successfully added data',
+                        showConfirmButton: false,
+                        timer: 1000,
+                    });
+                    $('#d_name').val("");
+                    $('#d_date').val("");
+                    showcard()
+                }
+            });
+        }
     })
+    $('#submitForm').click(function() {
+        var date = $('#d_date').val()
+        if (date) {
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url("alertDateInDatabase") ?>",
+                data: {
+                    d_date: date
+                },
+                success: function(alertDate) {
+                    if (alertDate == 1) {
+                        alert("This Month has already in database")
+                        $('#d_date').val("")
+                    }
+
+                }
+            })
+        } else {
+
+        }
+    })
+})
 </script>

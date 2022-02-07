@@ -1,170 +1,88 @@
-<div class="content-wrapper">
-    <div class="content">
+ <style>
+     body {
+         background-color: #333;
+     }
 
+     .box {
+         margin: 0 auto;
+         width: 240px;
+     }
 
-        <?php
+     .box .box-content {
+         background-color: grey;
+         height: 100px;
+         text-align: center;
+         color: #fff;
+         line-height: 100px;
+         text-transform: uppercase;
+         font-weight: bold;
+         margin: 15px;
+     }
 
-        const  UNITS = ['MILES_CONVERSION' => 2, 'INCHES_CONVERSION' => 3];
-        $data =  "2" . 5 + UNITS['INCHES_CONVERSION'];
+     #box-1 {
+         background-color: #ff3c41;
+     }
 
-        var_dump($data);
+     #box-2 {
+         background-color: #b9f;
+     }
 
+     #box-3 {
+         background-color: #0ebeff;
+     }
 
-        class MyClass
-        {
-            public function getClassName()
-            {
-                return "this is -" . __CLASS__;
-            }
-        }
-        $obj = new MyClass();
-        echo $obj->getClassName();
-        ?>
+     #box-4 {
+         background-color: #47cf73;
+     }
 
-
-
-        <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            Name: <input type="text" name="fname">
-            Name: <input type="text" name="s_fname">
-            <input type="submit">
-        </form>
-
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "get") {
-            // collect value of input field
-            $name = $_POST['fname'];
-            $s_name = $_POST['s_fname'];
-
-            if (empty($name) && empty($s_name)) {
-                echo "Name is empty";
-            } else {
-                echo $name . "<br>" . $s_name;
-            }
-        }
-
-
-        function f($required, $optional = null, ...$variadicParams)
-        {
-            printf(
-                'Required: %s; Optional: %d; number of variadic parameters: %d' . "\n",
-                $required,
-                $optional,
-                count($variadicParams)
-            );
-        }
-        echo f(1) . "<br>";
-        echo f(1, 2) . "<br>";
-        echo f(1, 2, 3) . "<br>";
-        echo f(1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4) . "<br>";
-        // this produces a fatal error: Too few arguments
-
-
-        function foo()
-        {
-            echo 'Foo';
-        }
-        $var = 'foo';
-        $var(); // calls foo()
-        function getFullName(string $firstName, string $lastName): string
-        {
-            return 123;
-        }
-        $name = getFullName('Mary', 'Moon');
-        echo gettype($name);;
+     #box-5 {
+         background-color: #ffdd40;
+         color: #333;
+     }
+ </style>
+ <div class="content-wrapper">
+     <div class="content">
+         <div class="box">
+             <div class="box-content" id="box-1">
+                 Box 1
+             </div>
+             <div class="box-content" id="box-2">
+                 Box 2
+             </div>
+             <div class="box-content" id="box-3">
+                 Box 3
+             </div>
+             <div class="box-content" id="box-4">
+                 Box 4
+             </div>
+             <div class="box-content" id="box-5">
+                 Box 5
+             </div>
+         </div>
 
 
 
-        function A(bool $a)
-        {
-            var_dump($a);
-        }
-        echo A(0);
-        class GFG
-        {
-            function print()
-            {
-                echo 'Parent Class';
-            }
-
-            function bar()
-            {
-                $this->print();
-            }
-        }
-
-        class Child extends GFG
-        {
-            function print()
-            {
-                echo 'Child Class';
-            }
-        }
-
-        $parent = new Child();
-        $parent->bar();
-        echo  "<br>";
 
 
 
-        class foo
-        {
-            public $value = 42;
-
-            function &getValue()
-            {
-                return $this->value;
-            }
-        }
-
-        $obj = new foo;
-        $myValue = &$obj->getValue(); // $myValue is a reference to $obj->value, which is 42.
-        $obj->value = 2;
-        echo $myValue;
-        echo "<br>";
-
-        function foor()
-        {
-            $numargs = func_num_args();
-            echo "Number of arguments: $numargs\n";
-           
-                echo "Second argument is: " . func_get_arg(3) . "\n";
-            
-        }
-
-        foor(1, 2, 3,90);
-        ?>
 
 
+         <?php $number = 12.49213;
 
-    </div>
-</div>
+            // 1,235
+            //echo number_format($number) . PHP_EOL;
+            // 1,234.568
+            //echo number_format($number, 5) . PHP_EOL;
+            // 1.234,57
+            echo number_format($number, 3, ',', '351') . PHP_EOL;  ?>
 
+     </div>
+ </div>
 
-<script src="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-
-        var dataList = [
-            data => 'value',
-            data1 => 'value1',
-            data2 => 'value2',
-            data3 => 'value3',
-            data4 => 'value4'
-        ]
-
-        $.each(dataList, function(key, value) {
-            if (key == [2] || key == [3]) {
-
-            } else {
-                console.log(key + ' is skipped');
-            }
-        })
-
-
-        console.log('Value: ' + x);
-
-
-
-    })
-</script>
+ <script src="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery.min.js"></script>
+ <script>
+     var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+     var findNum = numbers.map(function(theNum) {
+         return theNum === 65;
+     });
+ </script>

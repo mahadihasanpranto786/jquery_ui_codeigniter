@@ -42,44 +42,44 @@
 </div>
 <script src="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery.min.js"></script>
 <script>
-    $(function() {
-        var spinner = $("#spinner").spinner();
+$(function() {
+    var spinner = $("#spinner").spinner();
 
-        $("#disable").on("click", function() {
-            if (spinner.spinner("option", "disabled")) {
-                spinner.spinner("enable");
-            } else {
-                spinner.spinner("disable");
-            }
-        });
-        $("#destroy").on("click", function() {
-            if (spinner.spinner("instance")) {
-                spinner.spinner("destroy");
-            } else {
-                spinner.spinner();
-            }
-        });
-        $("#getvalue").on("click", function() {
-            alert(spinner.spinner("value"));
-        });
-        $("#setvalue").on("click", function() {
-            spinner.spinner("value", 5);
-        });
-
-        $("button").button();
+    $("#disable").on("click", function() {
+        if (spinner.spinner("option", "disabled")) {
+            spinner.spinner("enable");
+        } else {
+            spinner.spinner("disable");
+        }
     });
-    $(function() {
-        $("#currency").on("change", function() {
-
-            $("#spinner").spinner("option", "culture", $(this).val());
-
-        });
-        $("#spinner").spinner({
-            min: 5,
-            max: 2500,
-            step: 25,
-            start: 1000,
-            numberFormat: "C"
-        });
+    $("#destroy").on("click", function() {
+        if (spinner.spinner("instance")) {
+            spinner.spinner("destroy");
+        } else {
+            spinner.spinner();
+        }
     });
+    $("#getvalue").on("click", function() {
+        alert(spinner.spinner("value"));
+    });
+    $("#setvalue").on("click", function() {
+        spinner.spinner("value", 5);
+    });
+
+    $("button").button();
+});
+$(function() {
+    $("#currency").on("change", function() {
+
+        $("#spinner").spinner("option", "culture", $(this).val());
+
+    });
+    $("#spinner").spinner({
+        min: 5,
+        max: 2500,
+        step: 25,
+        start: 1000,
+        numberFormat: "C"
+    });
+});
 </script>

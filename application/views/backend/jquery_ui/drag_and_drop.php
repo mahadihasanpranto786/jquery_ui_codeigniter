@@ -38,24 +38,24 @@
 
 
 <script>
-    $(document).ready(function() {
-        ShowData()
+$(document).ready(function() {
+    ShowData()
 
 
 
 
 
-        function ShowData() {
-            $.ajax({
-                url: "<?= base_url('viewDrugAjax') ?>",
-                success: function(data) {
-                    $("#dataView").html(data)
-                    // alert(data);
+    function ShowData() {
+        $.ajax({
+            url: "<?= base_url('viewDrugAjax') ?>",
+            success: function(data) {
+                $("#dataView").html(data)
+                // alert(data);
 
-                }
-            })
-        }
+            }
+        })
+    }
 
 
-    })
+})
 </script>

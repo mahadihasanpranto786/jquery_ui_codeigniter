@@ -73,7 +73,7 @@
                                         position: index + 1
                                     })
                                 })
-                                console.log(ui)
+
                                 $.ajax({
                                     type: "POST",
                                     url: "<?php echo base_url("updateTabs") ?>",
@@ -82,7 +82,7 @@
                                     },
                                     success: function(resp) {
                                         //showData()
-                                        
+
                                     }
                                 })
 

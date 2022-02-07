@@ -150,7 +150,8 @@
                                             <?php
                                             if ($subMenu)
                                                 foreach ($subMenu->result() as $row) { ?>
-                                                <option id="dataId" data-id="<?= $row->m_id ?>" value="<?= $row->sm_id ?>"><?= $row->sm_title ?></option>
+                                                <option id="dataId" data-id="<?= $row->m_id ?>" value="<?= $row->sm_id ?>">
+                                                    <?= $row->sm_title ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>

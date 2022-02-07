@@ -103,7 +103,7 @@
 
             update: function(event, ui) {
 
-                console.log(event)
+
             },
 
         });
@@ -133,7 +133,8 @@
         });
 
         // Image deletion function
-        var recycle_icon = "<a href='link/to/recycle/script/when/we/have/js/off' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
+        var recycle_icon =
+            "<a href='link/to/recycle/script/when/we/have/js/off' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
 
         function deleteImage($item) {
             $item.fadeOut(function() {
@@ -156,7 +157,8 @@
         }
 
         // Image recycle function
-        var trash_icon = "<a href='link/to/trash/script/when/we/have/js/off' title='Delete this image' class='ui-icon ui-icon-trash'>Delete image</a>";
+        var trash_icon =
+            "<a href='link/to/trash/script/when/we/have/js/off' title='Delete this image' class='ui-icon ui-icon-trash'>Delete image</a>";
 
         function recycleImage($item) {
             $item.fadeOut(function() {
@@ -182,7 +184,8 @@
             if ($modal.length) {
                 $modal.dialog("open");
             } else {
-                var img = $("<img alt='" + title + "' width='384' height='288' style='display: none; padding: 8px;' />")
+                var img = $("<img alt='" + title +
+                        "' width='384' height='288' style='display: none; padding: 8px;' />")
                     .attr("src", src).appendTo("body");
                 setTimeout(function() {
                     img.dialog({
