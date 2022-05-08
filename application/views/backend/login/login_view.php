@@ -34,6 +34,12 @@
 			background-color: #13181c;
 			outline: none;
 		}
+
+		.buttonDesign {
+			border: 2px solid white;
+			border-radius: 50px 20px;
+			padding: 8px;
+		}
 	</style>
 </head>
 
@@ -62,7 +68,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6 col-12 fxt-bg-color">
+				<div class=" buttonDesign col-lg-6 col-12 fxt-bg-color">
 					<div class="fxt-content">
 						<div class="fxt-form">
 							<h2>Login</h2>
@@ -96,10 +102,10 @@
 
 								<br>
 								<div class="form-group text-center">
-									<button type="submit" class="btn btn-md w-50 btn-info">Log in</button>
+									<button type="submit" class="btn buttonDesign btn-md w-50 btn-info">Log in</button>
 
 									<div class="mt-3 showRoleButton">
-										<button class="btn btn-info mt-1" onclick="auto_login.number.value = '01674514499';auto_login.password.value = '123456'; auto_sign_in()">Demo Access 1</button>
+										<button class=" buttonDesign btn btn-info mt-1" onclick="auto_login.number.value = '01674514499';auto_login.password.value = '123456'; auto_sign_in()">Demo Access 1</button>
 									</div>
 
 								</div>
