@@ -25,4 +25,19 @@ class Test extends CI_Controller
         $path = 'backend/test';
         $this->engine->render_view($data, $path, $this->side_menu, $this->main_layout);
     }
+
+
+    public function FunctionName($c, $f)
+    {
+        return $c + $f;
+    }
+
+    public function anotherFun()
+    {
+        $data =  $this->FunctionName(1, 2);
+
+        for ($i = 0; $i < count($data); $i++) {
+            x_debug($i);
+        }
+    }
 }

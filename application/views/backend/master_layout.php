@@ -348,6 +348,23 @@ if (StyleEdition == '1') {
 		});
 	</script>
 	<script>
+		$(function() {
+			$.datepicker._gotoToday = function(id) {
+				$(id).datepicker('setDate', new Date()).datepicker('hide').blur();
+			};
+			$(".datepicker").datepicker({
+				dateFormat: 'dd-mm-yy',
+				showButtonPanel: true,
+				changeMonth: true,
+				changeYear: true,
+				inline: true,
+				showWeek: true,
+			});
+			$(".datepicker").datepicker("option", "showAnim", "fold");
+
+		});
+	</script>
+	<script>
 		$.validate({
 			lang: 'en'
 		});
@@ -355,10 +372,9 @@ if (StyleEdition == '1') {
 	<script>
 		$(function() {
 
-			$(".datepicker").datepicker({
+			/* $(".datepicker").datepicker({
 				dateFormat: 'dd-mm-yy',
-				/* 	dateFormat: 'dd/mm/yy' */
-			});
+			}); */
 			//Initialize Select2 Elements
 			$('.select2').select2()
 

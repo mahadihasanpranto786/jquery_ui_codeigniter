@@ -1,27 +1,26 @@
 <link rel="stylesheet" href="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery-ui.css">
 <style>
-.ui-state-active,
-.ui-widget-content .ui-state-active,
-.ui-widget-header .ui-state-active,
-a.ui-button:active,
-.ui-button:active,
-.ui-button.ui-state-active:hover {
-    border: 1px solid #003eff;
-    background: #007fff;
-    font-weight: 700 !important;
-    color: #ffffff;
-}
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        border: 1px solid #003eff;
+        background: #007fff;
+        font-weight: 700 !important;
+        color: #ffffff;
+    }
 
-.form_style {
-    border: 1px solid grey;
-    border-color: greenyellow;
-    box-shadow: 0px 1px 5px 5px grey;
-    border-radius: 5px;
-}
+    .form_style {
+        border: 1px solid grey;
+        border-color: greenyellow;
+        box-shadow: 0px 1px 5px 5px grey;
+        border-radius: 5px;
+    }
 </style>
 <div class="content-wrapper">
     <div class="content">
-
         <div class="row">
             <div class="col-md-6">
                 <div class="accordion">
@@ -71,11 +70,10 @@ a.ui-button:active,
                             if ($star) {
 
                                 foreach ($star->result() as $key => $row) { ?>
-                            <!-- 
+                                    <!-- 
                                     <input type="hidden" name="s_id" id="s_id" value="<?php echo $row->s_id; ?>"> -->
-                            <input class="ui_radio" type="checkbox" value="<?= $row->s_id ?>" name="rating_star[]"
-                                id="<?= $row->s_title ?>">
-                            <label for="<?= $row->s_title ?>"><?= $row->s_title ?></label>
+                                    <input class="ui_radio" type="checkbox" value="<?= $row->s_id ?>" name="rating_star[]" id="<?= $row->s_title ?>">
+                                    <label for="<?= $row->s_title ?>"><?= $row->s_title ?></label>
 
                             <?php }
                             } ?>
@@ -97,8 +95,7 @@ a.ui-button:active,
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Paragraph</label>
-                        <input type="text" name="paragraph" id="a_paragraph" class="form-control"
-                            placeholder="Paragraph input">
+                        <input type="text" name="paragraph" id="a_paragraph" class="form-control" placeholder="Paragraph input">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Description</label>
@@ -117,68 +114,68 @@ a.ui-button:active,
 <script src="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery.min.js"></script>
 
 <script>
-$(document).ready(function() {
-    showData()
+    $(document).ready(function() {
+        showData()
 
-    $(".accordion").accordion();
-    $(".ui_radio").checkboxradio();
-    $(".controlgroup-vertical").controlgroup({});
+        $(".accordion").accordion();
+        $(".ui_radio").checkboxradio();
+        $(".controlgroup-vertical").controlgroup({});
 
-    function showData() {
-        $.ajax({
-            url: "<?php echo base_url("ajaxAccordionShow") ?>",
-            success: function(data) {
-                $('.accordion').html(data);
-            }
-        })
-    }
-    $("#submitFrom").click(function() {
-        // var formData = new FormData(document.getElementById("valueFrom"));
+        function showData() {
+            $.ajax({
+                url: "<?php echo base_url("ajaxAccordionShow") ?>",
+                success: function(data) {
+                    $('.accordion').html(data);
+                }
+            })
+        }
+        $("#submitFrom").click(function() {
+            // var formData = new FormData(document.getElementById("valueFrom"));
 
-        var dataArray = [];
+            var dataArray = [];
 
-        $('input[name="rating_star[]"]:checked').each(function() {
-            if ($(this).val() !== '') {
-                dataArray.push({
-                        data: $(this).val()
-                    }
+            $('input[name="rating_star[]"]:checked').each(function() {
+                if ($(this).val() !== '') {
+                    dataArray.push({
+                            data: $(this).val()
+                        }
 
-                );
-            }
-        })
-        $.ajax({
-            type: "POST",
-            url: "<?= base_url("addAccordion") ?>",
-            data: {
-                dataArray,
-                country: $('input[name="country"]:checked').val(),
-                title: $('#a_title').val(),
-                paragraph: $('#a_paragraph ').val(),
-                description: $('#a_description ').val(),
-                car: $('#a_car').val(),
-            },
+                    );
+                }
+            })
+            $.ajax({
+                type: "POST",
+                url: "<?= base_url("addAccordion") ?>",
+                data: {
+                    dataArray,
+                    country: $('input[name="country"]:checked').val(),
+                    title: $('#a_title').val(),
+                    paragraph: $('#a_paragraph ').val(),
+                    description: $('#a_description ').val(),
+                    car: $('#a_car').val(),
+                },
 
-            success: function(data) {
-                $(".accordion").html(data)
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Successfully added data',
-                    showConfirmButton: false,
-                    timer: 1000,
-                });
-                $('input[name="country"]').prop('checked', false).checkboxradio('refresh')
-                $('input[name="rating_star[]"]').prop('checked', false).checkboxradio(
-                    'refresh')
-                $('#a_title').val("")
-                $('#a_paragraph').val("")
-                $('.note-editing-area').children('*').text('')
+                success: function(data) {
+                    $(".accordion").html(data)
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Successfully added data',
+                        showConfirmButton: false,
+                        timer: 1000,
+                    });
+                    $('input[name="country"]').prop('checked', false).checkboxradio('refresh')
+                    $('input[name="rating_star[]"]').prop('checked', false).checkboxradio(
+                        'refresh')
+                    $('#a_title').val("")
+                    $('#a_paragraph').val("")
+                    $('.note-editing-area').children('*').text('')
 
-                showData()
-            }
+                    showData()
+                }
+            })
+
         })
 
     })
-
-})
 </script>

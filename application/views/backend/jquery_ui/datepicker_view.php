@@ -46,22 +46,7 @@
 
 
 <script src="<?php echo base_url('') ?>assets/backend/plugins/jquery/jquery.min.js"></script>
-<script>
-$(function() {
-    $.datepicker._gotoToday = function(id) {
-        $(id).datepicker('setDate', new Date()).datepicker('hide').blur();
-    };
-    $(".datepicker").datepicker({
-        showButtonPanel: true,
-        changeMonth: true,
-        changeYear: true,
-        inline: true,
-        showWeek: true,
-    });
-    $(".datepicker").datepicker("option", "showAnim", "fold");
 
-});
-</script>
 <script>
 $(document).ready(function() {
     showcard()
