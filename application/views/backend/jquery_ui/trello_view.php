@@ -19,7 +19,7 @@ Flexbox is used as a fallback so that browsers which don't support grid will sti
 		box-sizing: border-box;
 	}
 
-	body {
+	.content-wrapper {
 
 		font-family: Arial, sans-serif;
 		display: flex;
@@ -326,7 +326,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 */
 
 	@supports (display: grid) {
-		body {
+		.content-wrapper {
 			display: grid;
 			grid-template-rows: 4rem 3rem auto;
 			grid-row-gap: 0.8rem;
@@ -434,21 +434,21 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 		<div class="board-controls">
 
-			<button class="board-title btn m-2 bg-primary">
+			<button class="board-title btn m-2 ">
 				<h2>Web Development</h2>
 			</button>
 
-			<button class="star-btn btn  m-2  bg-primary" aria-label="Star Board">
+			<button class="star-btn btn  m-2  " aria-label="Star Board">
 				<i class="far fa-star" aria-hidden="true"></i>
 			</button>
 
-			<button class="personal-btn  m-2  btn bg-primary">Personal</button>
+			<button class="personal-btn  m-2  btn ">Personal</button>
 
-			<button class="private-btn btn bg-primary  m-2 "><i class="fas fa-briefcase private-btn-icon" aria-hidden="true"></i>Private</button>
+			<button class="private-btn btn m-2 "><i class="fas fa-briefcase private-btn-icon" aria-hidden="true"></i>Private</button>
 
 		</div>
 
-		<button class="menu-btn btn  m-2  bg-primary"><i class="fas fa-ellipsis-h menu-btn-icon" aria-hidden="true"></i>Show Menu</button>
+		<button class="menu-btn btn  m-2  "><i class="fas fa-ellipsis-h menu-btn-icon" aria-hidden="true"></i>Show Menu</button>
 
 	</section>
 	<!-- End of board info bar -->
@@ -471,11 +471,24 @@ Remove or comment-out the code block below to see how the browser will fall-back
 	$(document).ready(function() {
 		$("#add_new_list_btn").click(function() {
 			var length = $(".list").length + 1;
-			$(".lists_container").append("<div class='list'><h3 class='list-title'>Tasks to Do</h3><ul class='list-items show_item" + length + "'></ul><button class='add-card-btn btn add_new_sub_item" + length + "'>Add a card</button></div>");
+			$(".lists_container").append(
+				"<div class='list'><h3 class='list-title'>Tasks to Do</h3><ul class='list-items show_item" + length + "'></ul><button class='add-card-btn btn add_new_sub_item" + length + "'>Add a card</button></div>"
+			);
 			$(".add_new_sub_item" + length).click(function() {
-				$(".show_item" + length).append("<li>NEw</li>");
+				var len = $(".list-items textarea").length + 1;
 
+				$(".show_item" + length).append(
+					"<textarea class='from-control' name='' id='items" + len + "'>New</textarea>"
+				);
+				$("#items" + len).blur(function(e) {
+					e.preventDefault();
+					$(this).val()
+					alert($(this).val())
+				});
 			});
+
+
+
 
 			$(function() {
 				$(".list-items").sortable({
